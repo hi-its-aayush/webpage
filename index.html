@@ -7,7 +7,7 @@
 
 <style>
 /* -----------------------------------------------------------
-   GLOBAL THEME — CLEAN, APPLE‑STYLE
+   GLOBAL THEME — CLEAN, MODERN, MINIMAL
 ----------------------------------------------------------- */
 :root {
   --bg1: #f8fafc;
@@ -86,13 +86,8 @@ p {
   margin: 0 auto;
   padding: 0 1.5rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
-}
-
-.header-name {
-  font-size: 1.1rem;
-  font-weight: 700;
 }
 
 .header-nav a {
@@ -108,31 +103,39 @@ p {
 }
 
 /* -----------------------------------------------------------
-   TOP PROFILE SECTION
+   HERO SECTION WITH PORTRAIT
 ----------------------------------------------------------- */
-.top-profile {
+.hero {
   text-align: center;
-  padding-top: 7rem;
-  padding-bottom: 2rem;
+  padding-top: 9rem;
 }
 
-.profile-photo {
+.hero .profile-photo {
   width: 180px;
   height: 180px;
   object-fit: cover;
-  border-radius: 4px; /* square with sharp corners */
+  border-radius: 4px;
   border: 3px solid #ffffff;
   box-shadow: 0 6px 24px rgba(0,0,0,0.12);
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeUp 1s ease forwards;
+  margin-bottom: 1.5rem;
 }
 
-.profile-name {
-  font-size: 2.8rem;
+.hero .name-title {
+  font-size: 3rem;
   font-weight: 800;
-  margin-top: 1rem;
   letter-spacing: -0.5px;
+  margin-bottom: 0.5rem;
+}
+
+.hero .badge {
+  font-size: 1rem;
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 /* -----------------------------------------------------------
@@ -145,9 +148,6 @@ p {
   padding: 1.5rem;
   box-shadow: var(--shadow);
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
@@ -172,25 +172,6 @@ p {
 }
 
 /* -----------------------------------------------------------
-   FADE-IN ANIMATION
------------------------------------------------------------ */
-.fade-in {
-  opacity: 0;
-  transform: translateY(25px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* -----------------------------------------------------------
    FOOTER
 ----------------------------------------------------------- */
 footer {
@@ -208,18 +189,6 @@ document.addEventListener("scroll", () => {
   if (window.scrollY > 20) header.classList.add("scrolled");
   else header.classList.remove("scrolled");
 });
-
-// Fade-in on scroll
-document.addEventListener("DOMContentLoaded", () => {
-  const elements = document.querySelectorAll(".fade-in");
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) entry.target.classList.add("visible");
-    });
-  }, { threshold: 0.2 });
-
-  elements.forEach(el => observer.observe(el));
-});
 </script>
 
 </head>
@@ -228,7 +197,6 @@ document.addEventListener("DOMContentLoaded", () => {
 <!-- FLOATING HEADER -->
 <header class="floating-header">
   <div class="header-inner">
-    <div></div> <!-- empty because name is removed from header -->
     <nav class="header-nav">
       <a href="#experience">Experience</a>
       <a href="#skills">Skills</a>
@@ -239,32 +207,22 @@ document.addEventListener("DOMContentLoaded", () => {
   </div>
 </header>
 
-<!-- TOP PROFILE SECTION -->
-<section class="top-profile fade-in">
+<!-- HERO SECTION WITH PORTRAIT -->
+<section class="hero">
   <div class="container">
-    <img src="aayush.png" alt="Aayush Acharya" class="profile-photo">
-    <h1 class="profile-name">Aayush Acharya</h1>
-  </div>
-</section>
-
-<!-- -----------------------------------------------------------
-     HERO
------------------------------------------------------------ -->
-<section class="hero fade-in">
-  <div class="container">
+    <img src="Aayush.png" alt="Aayush Acharya" class="profile-photo">
+    <h1 class="name-title">AAYUSH ACHARYA</h1>
     <div class="badge">IT Support Specialist • Sydney, Australia</div>
-    <h1>Technical Support with<br>Precision, Clarity & Reliability</h1>
     <p>
+      Technical Support with Precision, Clarity & Reliability.  
       I specialise in System and Network administration, IT support and troubleshooting — blending technical expertise with years of hospitality leadership to deliver calm, structured problem‑solving in fast‑paced environments.
     </p>
   </div>
 </section>
 
-<!-- -----------------------------------------------------------
-     EXPERIENCE
------------------------------------------------------------ -->
+<!-- EXPERIENCE -->
 <section id="experience">
-  <div class="container fade-in">
+  <div class="container">
     <h2>Experience</h2>
 
     <div class="card" style="margin-bottom: 3rem;">
@@ -322,7 +280,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     </div>
 
-    <div class="fade-in" style="margin-top:3rem;">
+    <div style="margin-top:3rem;">
       <h3>IT Documentation & Knowledge Base</h3>
       <p><strong>Technical Project</strong> | 2021 – Present</p>
       <div class="card">
@@ -345,11 +303,9 @@ document.addEventListener("DOMContentLoaded", () => {
   </div>
 </section>
 
-<!-- -----------------------------------------------------------
-     SKILLS
------------------------------------------------------------ -->
+<!-- SKILLS -->
 <section id="skills">
-  <div class="container fade-in">
+  <div class="container">
     <h2>Technical Skills & Certifications</h2>
 
     <div class="two-col">
@@ -382,11 +338,9 @@ document.addEventListener("DOMContentLoaded", () => {
   </div>
 </section>
 
-<!-- -----------------------------------------------------------
-     LEADERSHIP
------------------------------------------------------------ -->
+<!-- LEADERSHIP -->
 <section id="leadership">
-  <div class="container fade-in">
+  <div class="container">
     <h2>Hospitality Leadership → IT Advantage</h2>
 
     <div class="card">
@@ -404,11 +358,9 @@ document.addEventListener("DOMContentLoaded", () => {
   </div>
 </section>
 
-<!-- -----------------------------------------------------------
-     PROJECTS
------------------------------------------------------------ -->
+<!-- PROJECTS -->
 <section id="projects">
-  <div class="container fade-in">
+  <div class="container">
     <h2>Projects</h2>
 
     <div class="card">
@@ -420,11 +372,9 @@ document.addEventListener("DOMContentLoaded", () => {
   </div>
 </section>
 
-<!-- -----------------------------------------------------------
-     CONTACT
------------------------------------------------------------ -->
+<!-- CONTACT -->
 <section id="contact">
-  <div class="container fade-in">
+  <div class="container">
     <h2>Contact</h2>
     <p>Email: <strong>aayushh@outlook.com.au</strong></p>
     <p>Phone: <strong>0448 113 330</strong></p>
@@ -432,10 +382,8 @@ document.addEventListener("DOMContentLoaded", () => {
   </div>
 </section>
 
-<!-- -----------------------------------------------------------
-     SPEED GRID GAME (unchanged)
------------------------------------------------------------ -->
-<!-- Your entire Speed Grid game code stays exactly the same -->
+<!-- SPEED GRID GAME (unchanged) -->
+<!-- Your full game code goes here exactly as before -->
 
 <footer>
   © 2025 Aayush Acharya — All rights reserved.
