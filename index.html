@@ -57,8 +57,559 @@
 <div class="container">
     <h1>Aayush Acharya</h1>
     <p>Welcome to my portfolio</p>
-    <img src="Aayush.png" alt="Aayush Acharya" class="profile-photo">
+    <img src="aayush.png" alt="Aayush Acharya" class="profile-photo">
 </div>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Aayush Acharya | IT Support Specialist</title>
+
+<style>
+/* -----------------------------------------------------------
+   SOFT LIGHT THEME — APPLE‑STYLE
+----------------------------------------------------------- */
+:root {
+  --bg: #fafafa;
+  --card: #ffffff;
+  --text: #1a1a1a;
+  --muted: #555555;
+  --primary: #2563eb;
+  --accent: #d97706;
+  --border: #e5e7eb;
+  --radius: 14px;
+  --shadow: 0 4px 18px rgba(0,0,0,0.06);
+  --max-width: 1100px;
+  --section-padding: 5rem;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* -----------------------------------------------------------
+   LAYOUT
+----------------------------------------------------------- */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+section {
+  padding: var(--section-padding) 0;
+}
+
+h1, h2, h3 {
+  margin: 0 0 1rem 0;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 2.8rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+p {
+  margin: 0 0 1rem 0;
+}
+
+/* -----------------------------------------------------------
+   HERO — MINIMAL APPLE STYLE
+----------------------------------------------------------- */
+.hero {
+  text-align: center;
+  padding-top: 4rem;
+}
+
+.hero p {
+  max-width: 700px;
+  margin: 0 auto;
+  color: var(--muted);
+  font-size: 1.15rem;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 1.35rem; /* UPDATED SIZE */
+  font-weight: 600;
+  margin-bottom: 1.8rem;
+}
+
+/* -----------------------------------------------------------
+   ANIMATIONS — SMOOTH & SUBTLE
+----------------------------------------------------------- */
+.fade-in {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+}
+
+/* -----------------------------------------------------------
+   TWO-COLUMN LAYOUT
+----------------------------------------------------------- */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+}
+
+@media (max-width: 900px) {
+  .two-col {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* -----------------------------------------------------------
+   FOOTER
+----------------------------------------------------------- */
+footer {
+  text-align: center;
+  padding: 2rem 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const elements = document.querySelectorAll(".fade-in");
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add("visible");
+    });
+  }, { threshold: 0.2 });
+
+  elements.forEach(el => observer.observe(el));
+});
+</script>
+
+</head>
+
+<body>
+
+<!-- -----------------------------------------------------------
+     HERO
+----------------------------------------------------------- -->
+<section class="hero fade-in">
+  <div class="container">
+    <div class="badge">IT Support Specialist • Sydney, Australia</div>
+    <h1>Technical Support with<br>Precision, Clarity & Reliability</h1>
+    <p>
+      I specialise in System and Network administration, IT support and troubleshooting — blending technical expertise with years of hospitality leadership to deliver calm, structured problem‑solving in fast‑paced environments.
+    </p>
+  </div>
+</section>
+
+<!-- -----------------------------------------------------------
+     EXPERIENCE (UPDATED + CONSISTENT CARD SIZES)
+----------------------------------------------------------- -->
+<section id="experience">
+  <div class="container fade-in">
+    <h2>Experience</h2>
+
+    <!-- Top Summary Card -->
+    <div class="card" style="margin-bottom: 3rem; min-height: 220px;">
+      <h3>IT support and technical troubleshooting across enterprise and operational environments</h3>
+      <p>
+        Experienced in supporting large-scale corporate environments and multi‑venue operations, delivering reliable technical troubleshooting, system administration, and user support across AV systems, POS platforms, Microsoft 365, and operational technologies.
+      </p>
+    </div>
+
+    <div class="two-col">
+
+     <!-- PwC Sydney / Gastronomy Group -->
+<div>
+  <h3>Events & Hospitality Supervisor</h3>
+  <p><strong>Gastronomy Group – PwC Sydney</strong> | September 2025 – Present</p>
+  <div class="card" style="min-height: 420px;">
+    <ul>
+      <li>Managing audiovisual systems and technical configurations for executive boardrooms.</li>
+      <li>Responding to escalated technical incidents using systematic troubleshooting methodology.</li>
+      <li>Administering user accounts and access permissions across Microsoft Teams, Outlook, and Humanforce for 20+ staff members.</li>
+      <li>Supporting 1,000+ daily users across PwC Sydney’s corporate campus.</li>
+    </ul>
+
+    <h4 style="margin-top:1rem;">Key Skills</h4>
+    <ul>
+      <li>AV Systems</li>
+      <li>Microsoft 365</li>
+      <li>Technical Support</li>
+      <li>SLA Management</li>
+      <li>Root‑Cause Analysis</li>
+    </ul>
+  </div>
+</div>
+
+      <!-- Al Aseel Group -->
+      <div>
+        <h3>Venue Systems & Operations Specialist</h3>
+        <p><strong>Al Aseel Group (The Papermill Food)</strong> | July 2024 – September 2025</p>
+        <div class="card" style="min-height: 420px;">
+          <ul>
+            <li>Managed complete technical support lifecycle across three business venues.</li>
+            <li>Troubleshooting POS systems, reservation platforms, inventory management software, and networking equipment.</li>
+            <li>Created user accounts and configured role‑based access controls across multiple systems.</li>
+            <li>Developed documentation and training that reduced support requests by 30%.</li>
+          </ul>
+
+          <h4 style="margin-top:1rem;">Key Skills</h4>
+          <ul>
+            <li>POS Systems</li>
+            <li>Network Infrastructure</li>
+            <li>User Provisioning</li>
+            <li>Monday.com</li>
+            <li>Knowledge Base</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Technical Project -->
+    <div class="fade-in" style="margin-top:3rem;">
+      <h3>IT Documentation & Knowledge Base</h3>
+      <p><strong>Technical Project</strong> | 2021 – Present</p>
+      <div class="card" style="min-height: 300px;">
+        <ul>
+          <li>Created comprehensive troubleshooting guides and SOPs for common technical issues.</li>
+          <li>Developed user‑friendly documentation for POS systems, reservation platforms, and Microsoft 365 applications.</li>
+          <li>Built internal wiki‑style knowledge base improving team self‑service capabilities.</li>
+        </ul>
+
+        <h4 style="margin-top:1rem;">Key Skills</h4>
+        <ul>
+          <li>Documentation</li>
+          <li>Knowledge Management</li>
+          <li>SOPs</li>
+          <li>Training Materials</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- -----------------------------------------------------------
+     SKILLS + CERTIFICATIONS
+----------------------------------------------------------- -->
+<section id="skills">
+  <div class="container fade-in">
+    <h2>Technical Skills & Certifications</h2>
+
+    <div class="two-col">
+
+      <div class="card">
+        <h3>Technical Skills</h3>
+        <ul>
+          <li>Incident Management & Diagnostics</li>
+          <li>Remote Support & Ticketing</li>
+          <li>Hardware & Software Troubleshooting</li>
+          <li>Microsoft 365 & Azure</li>
+          <li>TCP/IP, DNS, DHCP</li>
+          <li>Windows, macOS, Linux</li>
+          <li>Active Directory & PowerShell</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Certifications</h3>
+        <ul>
+          <li>Google IT Support Professional Certificate</li>
+          <li>Introduction to Cybersecurity Careers</li>
+          <li>Introduction to Hardware & Operating Systems</li>
+          <li>Microsoft 365 Ecosystem</li>
+          <li>Artificial Intelligence on Microsoft Azure</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- -----------------------------------------------------------
+     LEADERSHIP
+----------------------------------------------------------- -->
+<section id="leadership">
+  <div class="container fade-in">
+    <h2>Hospitality Leadership → IT Advantage</h2>
+
+    <div class="card">
+      <p>
+        Years of hospitality leadership taught me to stay calm under pressure, communicate clearly, and solve problems quickly — skills that directly strengthen my IT support work.
+      </p>
+
+      <ul>
+        <li>Led teams of 15+ while managing technical operations.</li>
+        <li>Developed training that improved system usage and reduced errors.</li>
+        <li>Created documentation libraries that cut support requests by 30%.</li>
+        <li>Excelled in environments requiring fast, structured decision‑making.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- -----------------------------------------------------------
+     PROJECTS
+----------------------------------------------------------- -->
+<section id="projects">
+  <div class="container fade-in">
+    <h2>Projects</h2>
+
+    <div class="card">
+      <h3>IT Documentation & Knowledge Base</h3>
+      <p>
+        Built internal troubleshooting guides and SOPs that improved first‑contact resolution and reduced repetitive support requests across multiple teams.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- -----------------------------------------------------------
+     CONTACT
+----------------------------------------------------------- -->
+<section id="contact">
+  <div class="container fade-in">
+    <h2>Contact</h2>
+    <p>Email: <strong>aayushh@outlook.com.au</strong></p>
+    <p>Phone: <strong>0448 113 330</strong></p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/aayushacharya" target="_blank">linkedin.com/in/aayushacharya</a></p>
+  </div>
+</section>
+<!-- -----------------------------------------------------------
+     SPEED GRID — WITH INTRO MESSAGE + FUN RESULT + SHAKE EFFECT
+     + QUIT GAME BUTTON
+----------------------------------------------------------- -->
+
+<section id="speed-grid" style="padding: 4rem 0;">
+  <div class="container fade-in">
+    <h2 style="text-align:center; margin-bottom:1rem;">Speed Grid</h2>
+
+    <!-- Intro Message -->
+    <p id="grid-intro" style="text-align:center; color:#555; margin-bottom:2rem;">
+      I have built a simple and fun game where you have to tap numbers in correct order in as less time as possible. Would you like to play?
+    </p>
+
+    <div class="game-box" style="
+      max-width: 400px;
+      margin: 0 auto;
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+    ">
+
+      <!-- Start Button -->
+      <button id="grid-start" style="
+        padding:0.8rem 1.6rem;
+        background:#2563eb;
+        color:white;
+        border:none;
+        border-radius:10px;
+        font-size:1rem;
+        font-weight:600;
+        cursor:pointer;
+      ">Let's Play</button>
+
+      <!-- Timer -->
+      <p id="grid-timer" style="
+        margin-top:1rem;
+        font-size:1.1rem;
+        font-weight:600;
+        display:none;
+      ">Time: 0.00s</p>
+
+      <!-- Grid -->
+      <div id="grid-area" style="
+        display:none;
+        margin-top:1.5rem;
+        display:grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap:10px;
+      "></div>
+
+      <!-- Result -->
+      <p id="grid-result" style="margin-top:1.5rem; font-weight:600;"></p>
+
+      <!-- Buttons Row -->
+      <div id="grid-buttons" style="margin-top:1.5rem; display:none; gap:10px; justify-content:center;">
+        <button id="grid-restart" style="
+          padding:0.7rem 1.4rem;
+          background:#2563eb;
+          color:white;
+          border:none;
+          border-radius:10px;
+          font-size:1rem;
+          font-weight:600;
+          cursor:pointer;
+        ">Play Again</button>
+
+        <button id="grid-quit" style="
+          padding:0.7rem 1.4rem;
+          background:#6b7280;
+          color:white;
+          border:none;
+          border-radius:10px;
+          font-size:1rem;
+          font-weight:600;
+          cursor:pointer;
+        ">Quit Game</button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Shake animation for wrong clicks */
+  @keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-4px); }
+    50% { transform: translateX(4px); }
+    75% { transform: translateX(-4px); }
+    100% { transform: translateX(0); }
+  }
+
+  .shake {
+    animation: shake 0.25s ease;
+  }
+</style>
+
+<script>
+  const startBtn = document.getElementById("grid-start");
+  const restartBtn = document.getElementById("grid-restart");
+  const quitBtn = document.getElementById("grid-quit");
+  const gridArea = document.getElementById("grid-area");
+  const timerDisplay = document.getElementById("grid-timer");
+  const resultDisplay = document.getElementById("grid-result");
+  const introMessage = document.getElementById("grid-intro");
+  const buttonsRow = document.getElementById("grid-buttons");
+
+  let nextNumber = 1;
+  let startTime;
+  let timerInterval;
+
+  function startGame() {
+    nextNumber = 1;
+    resultDisplay.textContent = "";
+    buttonsRow.style.display = "none";
+    gridArea.style.display = "grid";
+    timerDisplay.style.display = "block";
+    startBtn.style.display = "none";
+    introMessage.style.display = "none";
+
+    // Reset timer
+    timerDisplay.textContent = "Time: 0.00s";
+    startTime = Date.now();
+    timerInterval = setInterval(updateTimer, 10);
+
+    // Generate numbers 1–16 shuffled
+    const numbers = Array.from({ length: 16 }, (_, i) => i + 1)
+      .sort(() => Math.random() - 0.5);
+
+    gridArea.innerHTML = "";
+
+    numbers.forEach(num => {
+      const cell = document.createElement("div");
+      cell.textContent = num;
+      cell.style.padding = "1rem";
+      cell.style.background = "#f3f4f6";
+      cell.style.borderRadius = "10px";
+      cell.style.fontSize = "1.2rem";
+      cell.style.fontWeight = "600";
+      cell.style.cursor = "pointer";
+      cell.style.userSelect = "none";
+      cell.style.transition = "background 0.2s, transform 0.2s";
+
+      cell.addEventListener("click", () => handleClick(num, cell));
+
+      gridArea.appendChild(cell);
+    });
+  }
+
+  function handleClick(num, cell) {
+    if (num === nextNumber) {
+      cell.style.background = "#d1fae5"; // green flash
+      cell.style.color = "#065f46";
+      cell.style.pointerEvents = "none";
+      nextNumber++;
+
+      if (nextNumber > 16) endGame();
+    } else {
+      // Wrong click: shake + red flash
+      cell.classList.add("shake");
+      cell.style.background = "#fee2e2";
+      cell.style.color = "#991b1b";
+
+      setTimeout(() => {
+        cell.classList.remove("shake");
+        cell.style.background = "#f3f4f6";
+        cell.style.color = "black";
+      }, 300);
+    }
+  }
+
+  function updateTimer() {
+    const elapsed = (Date.now() - startTime) / 1000;
+    timerDisplay.textContent = "Time: " + elapsed.toFixed(2) + "s";
+  }
+
+  function endGame() {
+    clearInterval(timerInterval);
+
+    const finalTime = timerDisplay.textContent.replace("Time: ", "");
+
+    resultDisplay.textContent =
+      "Nice work! You completed the challenge in " + finalTime + ". Want to try beating your score?";
+
+    buttonsRow.style.display = "flex";
+  }
+
+  // Quit game → return to intro
+  quitBtn.addEventListener("click", () => {
+    gridArea.style.display = "none";
+    timerDisplay.style.display = "none";
+    resultDisplay.textContent = "";
+    buttonsRow.style.display = "none";
+    startBtn.style.display = "inline-block";
+    introMessage.style.display = "block";
+  });
+
+  startBtn.addEventListener("click", startGame);
+  restartBtn.addEventListener("click", startGame);
+</script>
 
 <footer>
     © 2025 Aayush Acharya — All Rights Reserved
