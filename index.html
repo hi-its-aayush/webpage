@@ -6,68 +6,73 @@
 <title>Aayush Acharya | Portfolio</title>
 
 <style>
-    body {
-        margin: 0;
-        padding: 0;
-        background: #ffffff;
-        font-family: "Segoe UI", sans-serif;
-        color: #1a1a1a;
-        text-align: center;
+/* GLOBAL RESET */
+body {
+    margin: 0;
+    padding: 0;
+    background: #ffffff;
+    font-family: "Segoe UI", sans-serif;
+    color: #1a1a1a;
+    text-align: center;
+    line-height: 1.6;
+}
+
+/* REMOVE BULLET POINTS */
+ul {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+/* SUBTLE FADE-IN ANIMATION */
+.fade-soft {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeSoft 0.8s ease-out forwards;
+}
+
+@keyframes fadeSoft {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
     }
-
-    .container {
-        max-width: 700px;
-        margin: 0 auto;
-        padding: 4rem 1.5rem;
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
+}
 
-    h1 {
-        font-size: 3rem;
-        font-weight: 800;
-        margin: 0 0 1rem 0;
-        letter-spacing: -0.5px;
-    }
+/* LANDING PAGE */
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem;
+}
 
-    p {
-        font-size: 1.2rem;
-        color: #555555;
-        margin-bottom: 2.5rem;
-    }
+h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin: 0 0 1rem 0;
+    letter-spacing: -0.5px;
+}
 
-    .profile-photo {
-        width: 615px;
-        height: 495px;
-        object-fit: cover;
-        border-radius: 4px;
-        border: 3px solid #ffffff;
-        box-shadow: 0 6px 24px rgba(0,0,0,0.12);
-        margin-top: 1rem;
-    }
+p {
+    font-size: 1.2rem;
+    color: #555555;
+    margin-bottom: 2.5rem;
+}
 
-    footer {
-        font-size: 0.9rem;
-        color: #777777;
-        padding: 2rem 0;
-    }
-</style>
-</head>
+.profile-photo {
+    width: 615px;
+    height: 495px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 3px solid #ffffff;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+    margin-top: 1rem;
+}
 
-<body>
-
-<div class="container">
-    <h1>Aayush Acharya</h1>
-    <p>Welcome to my portfolio</p>
-    <img src="aayush.png" alt="Aayush Acharya" class="profile-photo">
-</div>
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Aayush Acharya | IT Support Specialist</title>
-
-<style>
-/* -----------------------------------------------------------
-   SOFT LIGHT THEME — APPLE‑STYLE
------------------------------------------------------------ */
+/* PORTFOLIO THEME */
 :root {
   --bg: #fafafa;
   --card: #ffffff;
@@ -80,51 +85,51 @@
   --shadow: 0 4px 18px rgba(0,0,0,0.06);
   --max-width: 1100px;
   --section-padding: 5rem;
-  font-family: "Segoe UI", sans-serif;
-}
-
-body {
-  background: var(--bg);
-  color: var(--text);
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
-}
-
-/* -----------------------------------------------------------
-   LAYOUT
------------------------------------------------------------ */
-.container {
-  width: 100%;
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 1.5rem;
 }
 
 section {
   padding: var(--section-padding) 0;
 }
 
-h1, h2, h3 {
-  margin: 0 0 1rem 0;
-  font-weight: 700;
-}
-
-h1 {
-  font-size: 2.8rem;
+.container-wide {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
 }
 
 h2 {
   font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
-p {
-  margin: 0 0 1rem 0;
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* -----------------------------------------------------------
-   HERO — MINIMAL APPLE STYLE
------------------------------------------------------------ */
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+}
+
+@media (max-width: 900px) {
+  .two-col {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* HERO */
 .hero {
   text-align: center;
   padding-top: 4rem;
@@ -143,87 +148,45 @@ p {
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: 999px;
-  font-size: 1.35rem; /* UPDATED SIZE */
+  font-size: 1.35rem;
   font-weight: 600;
   margin-bottom: 1.8rem;
 }
 
-/* -----------------------------------------------------------
-   ANIMATIONS — SMOOTH & SUBTLE
------------------------------------------------------------ */
-.fade-in {
-  opacity: 0;
-  transform: translateY(25px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+/* SPEED GRID GAME */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  50% { transform: translateX(4px); }
+  75% { transform: translateX(-4px); }
+  100% { transform: translateX(0); }
 }
 
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
+.shake {
+  animation: shake 0.25s ease;
 }
 
-.card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 1.5rem;
-  box-shadow: var(--shadow);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 24px rgba(0,0,0,0.08);
-}
-
-/* -----------------------------------------------------------
-   TWO-COLUMN LAYOUT
------------------------------------------------------------ */
-.two-col {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2.5rem;
-}
-
-@media (max-width: 900px) {
-  .two-col {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* -----------------------------------------------------------
-   FOOTER
------------------------------------------------------------ */
+/* FOOTER */
 footer {
-  text-align: center;
-  padding: 2rem 0;
-  color: var(--muted);
-  font-size: 0.9rem;
+    font-size: 0.9rem;
+    color: #777777;
+    padding: 2rem 0;
 }
 </style>
 
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const elements = document.querySelectorAll(".fade-in");
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) entry.target.classList.add("visible");
-    });
-  }, { threshold: 0.2 });
-
-  elements.forEach(el => observer.observe(el));
-});
-</script>
-
 </head>
-
 <body>
 
-<!-- -----------------------------------------------------------
-     HERO
------------------------------------------------------------ -->
-<section class="hero fade-in">
-  <div class="container">
+<!-- LANDING PAGE -->
+<div class="container fade-soft">
+    <h1>Aayush Acharya</h1>
+    <p>Welcome to my portfolio</p>
+    <img src="aayush.png" alt="Aayush Acharya" class="profile-photo">
+</div>
+
+<!-- HERO -->
+<section class="hero fade-soft">
+  <div class="container-wide">
     <div class="badge">IT Support Specialist • Sydney, Australia</div>
     <h1>Technical Support with<br>Precision, Clarity & Reliability</h1>
     <p>
@@ -232,14 +195,11 @@ document.addEventListener("DOMContentLoaded", () => {
   </div>
 </section>
 
-<!-- -----------------------------------------------------------
-     EXPERIENCE (UPDATED + CONSISTENT CARD SIZES)
------------------------------------------------------------ -->
-<section id="experience">
-  <div class="container fade-in">
+<!-- EXPERIENCE -->
+<section id="experience" class="fade-soft">
+  <div class="container-wide">
     <h2>Experience</h2>
 
-    <!-- Top Summary Card -->
     <div class="card" style="margin-bottom: 3rem; min-height: 220px;">
       <h3>IT support and technical troubleshooting across enterprise and operational environments</h3>
       <p>
@@ -249,34 +209,32 @@ document.addEventListener("DOMContentLoaded", () => {
 
     <div class="two-col">
 
-     <!-- PwC Sydney / Gastronomy Group -->
-<div>
-  <h3>Events & Hospitality Supervisor</h3>
-  <p><strong>Gastronomy Group – PwC Sydney</strong> | September 2025 – Present</p>
-  <div class="card" style="min-height: 420px;">
-    <ul>
-      <li>Managing audiovisual systems and technical configurations for executive boardrooms.</li>
-      <li>Responding to escalated technical incidents using systematic troubleshooting methodology.</li>
-      <li>Administering user accounts and access permissions across Microsoft Teams, Outlook, and Humanforce for 20+ staff members.</li>
-      <li>Supporting 1,000+ daily users across PwC Sydney’s corporate campus.</li>
-    </ul>
+      <div>
+        <h3>Events & Hospitality Supervisor</h3>
+        <p><strong>Gastronomy Group – PwC Sydney</strong> | September 2025 – Present</p>
+        <div class="card fade-soft" style="min-height: 420px;">
+          <ul>
+            <li>Managing audiovisual systems and technical configurations for executive boardrooms.</li>
+            <li>Responding to escalated technical incidents using systematic troubleshooting methodology.</li>
+            <li>Administering user accounts and access permissions across Microsoft Teams, Outlook, and Humanforce for 20+ staff members.</li>
+            <li>Supporting 1,000+ daily users across PwC Sydney’s corporate campus.</li>
+          </ul>
 
-    <h4 style="margin-top:1rem;">Key Skills</h4>
-    <ul>
-      <li>AV Systems</li>
-      <li>Microsoft 365</li>
-      <li>Technical Support</li>
-      <li>SLA Management</li>
-      <li>Root‑Cause Analysis</li>
-    </ul>
-  </div>
-</div>
+          <h4 style="margin-top:1rem;">Key Skills</h4>
+          <ul>
+            <li>AV Systems</li>
+            <li>Microsoft 365</li>
+            <li>Technical Support</li>
+            <li>SLA Management</li>
+            <li>Root‑Cause Analysis</li>
+          </ul>
+        </div>
+      </div>
 
-      <!-- Al Aseel Group -->
       <div>
         <h3>Venue Systems & Operations Specialist</h3>
         <p><strong>Al Aseel Group (The Papermill Food)</strong> | July 2024 – September 2025</p>
-        <div class="card" style="min-height: 420px;">
+        <div class="card fade-soft" style="min-height: 420px;">
           <ul>
             <li>Managed complete technical support lifecycle across three business venues.</li>
             <li>Troubleshooting POS systems, reservation platforms, inventory management software, and networking equipment.</li>
@@ -297,8 +255,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     </div>
 
-    <!-- Technical Project -->
-    <div class="fade-in" style="margin-top:3rem;">
+    <div class="fade-soft" style="margin-top:3rem;">
       <h3>IT Documentation & Knowledge Base</h3>
       <p><strong>Technical Project</strong> | 2021 – Present</p>
       <div class="card" style="min-height: 300px;">
@@ -320,16 +277,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   </div>
 </section>
-<!-- -----------------------------------------------------------
-     SKILLS + CERTIFICATIONS
------------------------------------------------------------ -->
-<section id="skills">
-  <div class="container fade-in">
+
+<!-- SKILLS -->
+<section id="skills" class="fade-soft">
+  <div class="container-wide">
     <h2>Technical Skills & Certifications</h2>
 
     <div class="two-col">
 
-      <div class="card">
+      <div class="card fade-soft">
         <h3>Technical Skills</h3>
         <ul>
           <li>Incident Management & Diagnostics</li>
@@ -342,7 +298,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </ul>
       </div>
 
-      <div class="card">
+      <div class="card fade-soft">
         <h3>Certifications</h3>
         <ul>
           <li>Google IT Support Professional Certificate</li>
@@ -357,14 +313,12 @@ document.addEventListener("DOMContentLoaded", () => {
   </div>
 </section>
 
-<!-- -----------------------------------------------------------
-     LEADERSHIP
------------------------------------------------------------ -->
-<section id="leadership">
-  <div class="container fade-in">
+<!-- LEADERSHIP -->
+<section id="leadership" class="fade-soft">
+  <div class="container-wide">
     <h2>Hospitality Leadership → IT Advantage</h2>
 
-    <div class="card">
+    <div class="card fade-soft">
       <p>
         Years of hospitality leadership taught me to stay calm under pressure, communicate clearly, and solve problems quickly — skills that directly strengthen my IT support work.
       </p>
@@ -379,14 +333,12 @@ document.addEventListener("DOMContentLoaded", () => {
   </div>
 </section>
 
-<!-- -----------------------------------------------------------
-     PROJECTS
------------------------------------------------------------ -->
-<section id="projects">
-  <div class="container fade-in">
+<!-- PROJECTS -->
+<section id="projects" class="fade-soft">
+  <div class="container-wide">
     <h2>Projects</h2>
 
-    <div class="card">
+    <div class="card fade-soft">
       <h3>IT Documentation & Knowledge Base</h3>
       <p>
         Built internal troubleshooting guides and SOPs that improved first‑contact resolution and reduced repetitive support requests across multiple teams.
@@ -395,27 +347,21 @@ document.addEventListener("DOMContentLoaded", () => {
   </div>
 </section>
 
-<!-- -----------------------------------------------------------
-     CONTACT
------------------------------------------------------------ -->
-<section id="contact">
-  <div class="container fade-in">
+<!-- CONTACT -->
+<section id="contact" class="fade-soft">
+  <div class="container-wide">
     <h2>Contact</h2>
     <p>Email: <strong>aayushh@outlook.com.au</strong></p>
     <p>Phone: <strong>0448 113 330</strong></p>
     <p>LinkedIn: <a href="https://linkedin.com/in/aayushacharya" target="_blank">linkedin.com/in/aayushacharya</a></p>
   </div>
 </section>
-<!-- -----------------------------------------------------------
-     SPEED GRID — WITH INTRO MESSAGE + FUN RESULT + SHAKE EFFECT
-     + QUIT GAME BUTTON
------------------------------------------------------------ -->
 
-<section id="speed-grid" style="padding: 4rem 0;">
-  <div class="container fade-in">
+<!-- SPEED GRID GAME -->
+<section id="speed-grid" class="fade-soft" style="padding: 4rem 0;">
+  <div class="container-wide">
     <h2 style="text-align:center; margin-bottom:1rem;">Speed Grid</h2>
 
-    <!-- Intro Message -->
     <p id="grid-intro" style="text-align:center; color:#555; margin-bottom:2rem;">
       I have built a simple and fun game where you have to tap numbers in correct order in as less time as possible. Would you like to play?
     </p>
@@ -431,7 +377,6 @@ document.addEventListener("DOMContentLoaded", () => {
       box-shadow: 0 4px 18px rgba(0,0,0,0.06);
     ">
 
-      <!-- Start Button -->
       <button id="grid-start" style="
         padding:0.8rem 1.6rem;
         background:#2563eb;
@@ -443,7 +388,6 @@ document.addEventListener("DOMContentLoaded", () => {
         cursor:pointer;
       ">Let's Play</button>
 
-      <!-- Timer -->
       <p id="grid-timer" style="
         margin-top:1rem;
         font-size:1.1rem;
@@ -451,7 +395,6 @@ document.addEventListener("DOMContentLoaded", () => {
         display:none;
       ">Time: 0.00s</p>
 
-      <!-- Grid -->
       <div id="grid-area" style="
         display:none;
         margin-top:1.5rem;
@@ -460,10 +403,8 @@ document.addEventListener("DOMContentLoaded", () => {
         gap:10px;
       "></div>
 
-      <!-- Result -->
       <p id="grid-result" style="margin-top:1.5rem; font-weight:600;"></p>
 
-      <!-- Buttons Row -->
       <div id="grid-buttons" style="margin-top:1.5rem; display:none; gap:10px; justify-content:center;">
         <button id="grid-restart" style="
           padding:0.7rem 1.4rem;
@@ -492,21 +433,6 @@ document.addEventListener("DOMContentLoaded", () => {
   </div>
 </section>
 
-<style>
-  /* Shake animation for wrong clicks */
-  @keyframes shake {
-    0% { transform: translateX(0); }
-    25% { transform: translateX(-4px); }
-    50% { transform: translateX(4px); }
-    75% { transform: translateX(-4px); }
-    100% { transform: translateX(0); }
-  }
-
-  .shake {
-    animation: shake 0.25s ease;
-  }
-</style>
-
 <script>
   const startBtn = document.getElementById("grid-start");
   const restartBtn = document.getElementById("grid-restart");
@@ -530,12 +456,10 @@ document.addEventListener("DOMContentLoaded", () => {
     startBtn.style.display = "none";
     introMessage.style.display = "none";
 
-    // Reset timer
     timerDisplay.textContent = "Time: 0.00s";
     startTime = Date.now();
     timerInterval = setInterval(updateTimer, 10);
 
-    // Generate numbers 1–16 shuffled
     const numbers = Array.from({ length: 16 }, (_, i) => i + 1)
       .sort(() => Math.random() - 0.5);
 
@@ -561,14 +485,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function handleClick(num, cell) {
     if (num === nextNumber) {
-      cell.style.background = "#d1fae5"; // green flash
+      cell.style.background = "#d1fae5";
       cell.style.color = "#065f46";
       cell.style.pointerEvents = "none";
       nextNumber++;
 
       if (nextNumber > 16) endGame();
     } else {
-      // Wrong click: shake + red flash
       cell.classList.add("shake");
       cell.style.background = "#fee2e2";
       cell.style.color = "#991b1b";
