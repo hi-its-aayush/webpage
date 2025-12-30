@@ -118,9 +118,9 @@ p {
 
 .profile-photo {
   width: 180px;
-  height: 220px;
+  height: 180px;
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: 4px; /* square with sharp corners */
   border: 3px solid #ffffff;
   box-shadow: 0 6px 24px rgba(0,0,0,0.12);
   opacity: 0;
@@ -228,7 +228,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <!-- FLOATING HEADER -->
 <header class="floating-header">
   <div class="header-inner">
-    <div class="header-name">Aayush Acharya</div>
+    <div></div> <!-- empty because name is removed from header -->
     <nav class="header-nav">
       <a href="#experience">Experience</a>
       <a href="#skills">Skills</a>
@@ -435,8 +435,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <!-- -----------------------------------------------------------
      SPEED GRID GAME (unchanged)
 ----------------------------------------------------------- -->
-<!-- Your entire Speed Grid game code remains exactly the same -->
-<!-- (I can clean and modernize it later if you want) -->
+<!-- Your entire Speed Grid game code stays exactly the same -->
 
 <footer>
   © 2025 Aayush Acharya — All rights reserved.
