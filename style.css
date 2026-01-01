@@ -257,3 +257,40 @@ footer {
     color: var(--bg-main);
     transform: translateY(-5px);
 }
+/* --- MOBILE LAYOUT FIXES (Paste at bottom of style.css) --- */
+@media (max-width: 768px) {
+    /* 1. Fix Navigation: Stack Logo and Links */
+    .nav-content {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+    
+    .nav-links {
+        gap: 1rem;
+        font-size: 0.85rem; /* Smaller text to fit screen */
+        justify-content: center;
+        width: 100%;
+        flex-wrap: wrap; /* Allows links to wrap if needed */
+    }
+
+    /* 2. Fix Giant Text */
+    .header-intro h1 {
+        font-size: 2rem; /* Shrinks from 3rem to fit phone */
+    }
+    
+    .headline {
+        font-size: 1.5rem;
+    }
+
+    /* 3. Tighten Spacing */
+    section {
+        padding: 2.5rem 0; /* Less empty space between sections */
+    }
+    
+    /* 4. Ensure Images don't overflow */
+    .profile-photo {
+        max-width: 250px; /* Smaller photo on mobile */
+        margin: 0 auto;
+    }
+}
