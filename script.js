@@ -33,7 +33,7 @@ function startGame() {
     const cell = document.createElement("div");
     cell.textContent = num;
     cell.style.padding = "1rem";
-    cell.style.background = "#f3f4f6";
+    cell.style.background = "#262626";
     cell.style.borderRadius = "10px";
     cell.style.fontSize = "1.2rem";
     cell.style.fontWeight = "600";
@@ -62,8 +62,8 @@ function handleClick(num, cell) {
 
     setTimeout(() => {
       cell.classList.remove("shake");
-      cell.style.background = "#f3f4f6";
-      cell.style.color = "black";
+      cell.style.background = "#262626";
+      cell.style.color = "white";
     }, 300);
   }
 }
