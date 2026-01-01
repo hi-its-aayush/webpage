@@ -243,11 +243,17 @@
             <p style="margin-bottom: 1rem; color: var(--text-muted);">
                 Please verify you are human to view contact details:
             </p>
-            <div class="g-recaptcha" 
-                 data-sitekey="6Lctdj0sAAAAAC_oVLF4swsRefigVUu5ujPDwKt6" 
-                 data-callback="revealContactInfo"
-                 style="display: inline-block;">
-            </div>
+           <div id="captcha-container">
+    <p style="margin-bottom: 1rem; color: var(--text-muted);">
+        Please verify you are human to view contact details:
+    </p>
+    
+    <div class="g-recaptcha" 
+         data-sitekey="6Lctdj0sAAAAAC_oVLF4swsRefigVUu5ujPDwKt6" 
+         data-callback="revealContactInfo"
+         style="display: inline-block;">
+    </div>
+</div>
         </div>
 
         <div id="contact-info" class="contact-links" style="display: none;">
