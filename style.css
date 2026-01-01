@@ -5,7 +5,6 @@ body {
     background: #ffffff;
     font-family: "Segoe UI", sans-serif;
     color: #1a1a1a;
-    text-align: left;
     line-height: 1.6;
 }
 
@@ -39,6 +38,14 @@ ul {
     max-width: 700px;
     margin: 0 auto;
     padding: 4rem 1.5rem;
+    text-align: center; /* center the block */
+}
+
+.container h1,
+.container p {
+    text-align: left; /* keep text left-aligned */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 h1 {
@@ -81,7 +88,7 @@ p {
 
 section {
   padding: var(--section-padding) 0;
-  text-align: center;
+  text-align: center; /* center the section container */
 }
 
 .container-wide {
@@ -89,14 +96,24 @@ section {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 1.5rem;
+  text-align: center; /* center the block */
+}
+
+.container-wide h2,
+.container-wide h3,
+.container-wide p,
+.container-wide ul {
+  text-align: left; /* keep text left-aligned */
+  margin-left: auto;
+  margin-right: auto;
 }
 
 h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
-  text-align: center;
 }
 
+/* CARDS */
 .card {
   background: var(--card);
   border: 1px solid var(--border);
@@ -104,6 +121,7 @@ h2 {
   padding: 1.5rem;
   box-shadow: var(--shadow);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
+  text-align: left; /* ensure card text stays left-aligned */
 }
 
 .card:hover {
@@ -111,6 +129,7 @@ h2 {
   box-shadow: 0 6px 24px rgba(0,0,0,0.08);
 }
 
+/* GRID LAYOUT */
 .two-col {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -134,6 +153,7 @@ h2 {
   margin: 0 auto;
   color: var(--muted);
   font-size: 1.15rem;
+  text-align: left; /* keep hero text left-aligned */
 }
 
 .badge {
@@ -160,7 +180,6 @@ h2 {
   animation: shake 0.25s ease;
 }
 
-/* GAME BOX BUTTONS */
 .game-box {
   max-width: 400px;
   margin: 0 auto;
@@ -216,4 +235,5 @@ footer {
     font-size: 0.9rem;
     color: #777777;
     padding: 2rem 0;
+    text-align: center;
 }
