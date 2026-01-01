@@ -4,156 +4,161 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aayush Acharya | Portfolio</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link href="style.css" rel="stylesheet">
 </head>
 
 <body>
 
-<!-- LANDING PAGE -->
-<div class="container fade-soft">
-    <h1>Aayush Acharya</h1>
-    <p>Welcome to my portfolio</p>
-    <img src="aayush.png" alt="Aayush Acharya" class="profile-photo">
-</div>
+<nav class="navbar">
+    <div class="nav-content">
+        <div class="logo">Aayush Acharya</div>
+        <div class="nav-links">
+            <a href="#experience">Experience</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact" class="btn-contact">Contact</a>
+        </div>
+    </div>
+</nav>
 
-<!-- HERO -->
-<section class="hero fade-soft">
+<header class="main-header fade-in">
+    <div class="container-wide header-grid">
+        
+        <div class="header-intro">
+            <h1>Aayush Acharya</h1>
+            <p class="welcome-text">Welcome to my portfolio</p>
+            <div class="badge">IT Support Specialist • Sydney, Australia</div>
+            <h2 class="headline">Technical Support with<br>Precision, Clarity & Reliability</h2>
+            <p class="sub-headline">
+                I specialise in System and Network administration, IT support and troubleshooting — blending technical expertise with years of hospitality leadership to deliver calm, structured problem-solving services.
+            </p>
+        </div>
+
+        <div class="header-image-box">
+            <img src="aayush.png" alt="Aayush Acharya" class="profile-photo">
+        </div>
+    </div>
+</header>
+
+<section id="experience" class="fade-in">
   <div class="container-wide">
-    <div class="badge">IT Support Specialist • Sydney, Australia</div>
-    <h1>Technical Support with<br>Precision, Clarity & Reliability</h1>
-    <p>
-      I specialise in System and Network administration, IT support and troubleshooting — blending technical expertise with years of hospitality leadership to deliver calm, structured problem-solving services.
-    </p>
-  </div>
-</section>
+    <h2 class="section-title">Experience</h2>
 
-<!-- EXPERIENCE -->
-<section id="experience" class="fade-soft">
-  <div class="container-wide">
-    <h2>Experience</h2>
-
-    <!-- INTRO CARD -->
-    <div class="card" style="margin-bottom: 3rem; min-height: 220px;">
+    <div class="card card-featured">
       <h3>IT support and technical troubleshooting across enterprise and operational environments</h3>
       <p>
         Experienced in supporting large-scale corporate environments and multi‑venue operations, delivering reliable technical troubleshooting, system administration, and user support across AV and enterprise IT systems.
       </p>
     </div>
 
-    <!-- ROW 1 -->
-    <div class="two-col">
+    <div class="bento-grid">
 
-      <!-- PwC -->
-      <div>
-        <h3>Events & Hospitality Supervisor</h3>
-        <p><strong>Gastronomy Group – PwC Sydney</strong> | September 2025 – Present</p>
-        <div class="card fade-soft" style="min-height: 420px;">
-          <ul>
+      <div class="card">
+        <div class="card-top">
+            <h3>Events & Hospitality Supervisor</h3>
+            <p class="meta"><strong>Gastronomy Group – PwC Sydney</strong> | September 2025 – Present</p>
+        </div>
+        <ul>
             <li>Managing audiovisual systems and technical configurations for executive boardrooms.</li>
             <li>Responding to escalated technical incidents using systematic troubleshooting methodology.</li>
             <li>Administering user accounts and access permissions across Microsoft Teams, Outlook, and Humanforce for 20+ staff members.</li>
             <li>Supporting 1,000+ daily users across PwC Sydney’s corporate campus.</li>
-          </ul>
-
-          <h4 style="margin-top:1rem;">Key Skills</h4>
-          <ul>
-            <li>AV Systems</li>
-            <li>Microsoft 365</li>
-            <li>Technical Support</li>
-            <li>SLA Management</li>
-            <li>Root‑Cause Analysis</li>
-          </ul>
+        </ul>
+        <div class="skills-tag-container">
+            <h4>Key Skills</h4>
+            <div class="tags">
+                <span>AV Systems</span>
+                <span>Microsoft 365</span>
+                <span>Technical Support</span>
+                <span>SLA Management</span>
+                <span>Root‑Cause Analysis</span>
+            </div>
         </div>
       </div>
 
-      <!-- Venue Systems -->
-      <div>
-        <h3>Venue Systems & Operations Specialist</h3>
-        <p><strong>Al Aseel Group (The Papermill Food)</strong> | July 2024 – September 2025</p>
-        <div class="card fade-soft" style="min-height: 420px;">
-          <ul>
+      <div class="card">
+        <div class="card-top">
+            <h3>Venue Systems & Operations Specialist</h3>
+            <p class="meta"><strong>Al Aseel Group (The Papermill Food)</strong> | July 2024 – September 2025</p>
+        </div>
+        <ul>
             <li>Managed complete technical support lifecycle across three business venues.</li>
             <li>Troubleshooting POS systems, reservation platforms, inventory management software, and networking equipment.</li>
             <li>Created user accounts and configured role‑based access controls across multiple systems.</li>
             <li>Developed documentation and training that reduced support requests by 30%.</li>
-          </ul>
-
-          <h4 style="margin-top:1rem;">Key Skills</h4>
-          <ul>
-            <li>POS Systems</li>
-            <li>Network Infrastructure</li>
-            <li>User Provisioning</li>
-            <li>Monday.com</li>
-            <li>Knowledge Base</li>
-          </ul>
+        </ul>
+        <div class="skills-tag-container">
+            <h4>Key Skills</h4>
+            <div class="tags">
+                <span>POS Systems</span>
+                <span>Network Infrastructure</span>
+                <span>User Provisioning</span>
+                <span>Monday.com</span>
+                <span>Knowledge Base</span>
+            </div>
         </div>
       </div>
 
-    </div> <!-- END ROW 1 -->
-
-    <!-- ROW 2 -->
-    <div class="two-col" style="margin-top: 3rem;">
-
-      <!-- IT Support Specialist -->
-      <div>
-        <h3>IT Support Specialist</h3>
-        <p><strong>Al Aseel Group – Bankstown, NSW</strong> | July 2023 – July 2024</p>
-
-        <div class="card fade-soft" style="min-height: 420px;">
-          <ul>
+      <div class="card">
+        <div class="card-top">
+            <h3>IT Support Specialist</h3>
+            <p class="meta"><strong>Al Aseel Group – Bankstown, NSW</strong> | July 2023 – July 2024</p>
+        </div>
+        <ul>
             <li>Provided Level 1 and Level 2 technical support for POS systems, reservation platforms, and networking infrastructure, managing 15–20 support requests daily with a 95%+ first‑call resolution rate.</li>
             <li>Managed complete user account lifecycle including provisioning, modification, and deprovisioning across enterprise systems, ensuring compliance with security and access control standards.</li>
             <li>Troubleshot hardware and software issues using Windows Event Viewer, network connectivity testing, and application log review.</li>
             <li>Developed technical documentation including troubleshooting flowcharts, FAQ documents, and quick‑reference guides.</li>
             <li>Coordinated with external vendors for maintenance, upgrades, and complex technical issues; performed system health checks and implemented security patches.</li>
-          </ul>
-
-          <h4 style="margin-top:1rem;">Key Skills</h4>
-          <ul>
-            <li>Technical Support (L1 & L2)</li>
-            <li>POS & Reservation Systems</li>
-            <li>User Account Lifecycle</li>
-            <li>Network Troubleshooting</li>
-            <li>Documentation & SOPs</li>
-          </ul>
+        </ul>
+        <div class="skills-tag-container">
+            <h4>Key Skills</h4>
+            <div class="tags">
+                <span>Technical Support (L1 & L2)</span>
+                <span>POS & Reservation Systems</span>
+                <span>User Account Lifecycle</span>
+                <span>Network Troubleshooting</span>
+                <span>Documentation & SOPs</span>
+            </div>
         </div>
       </div>
 
-      <!-- IT Documentation & Knowledge Base -->
-      <div>
-        <h3>IT Documentation & Knowledge Base</h3>
-        <p><strong>Technical Project</strong> | 2021 – Present</p>
-        <div class="card fade-soft" style="min-height: 420px;">
-          <ul>
+      <div class="card">
+        <div class="card-top">
+            <h3>IT Documentation & Knowledge Base</h3>
+            <p class="meta"><strong>Technical Project</strong> | 2021 – Present</p>
+        </div>
+        <ul>
             <li>Created comprehensive troubleshooting guides and SOPs for common technical issues.</li>
             <li>Developed user‑friendly documentation for POS systems, reservation platforms, and Microsoft 365 applications.</li>
             <li>Built internal wiki‑style knowledge base improving team self‑service capabilities.</li>
-          </ul>
-
-          <h4 style="margin-top:1rem;">Key Skills</h4>
-          <ul>
-            <li>Documentation</li>
-            <li>Knowledge Management</li>
-            <li>SOPs</li>
-            <li>Training Materials</li>
-          </ul>
+        </ul>
+        <div class="skills-tag-container">
+            <h4>Key Skills</h4>
+            <div class="tags">
+                <span>Documentation</span>
+                <span>Knowledge Management</span>
+                <span>SOPs</span>
+                <span>Training Materials</span>
+            </div>
         </div>
       </div>
 
-    </div> <!-- END ROW 2 -->
-
+    </div> 
   </div>
 </section>
-<!-- SKILLS -->
-<section id="skills" class="fade-soft">
+
+<section id="skills" class="fade-in">
   <div class="container-wide">
-    <h2>Technical Skills & Certifications</h2>
+    <h2 class="section-title">Technical Skills & Certifications</h2>
 
-    <div class="two-col">
-
-      <div class="card fade-soft">
+    <div class="bento-grid-2">
+      <div class="card">
         <h3>Technical Skills</h3>
-        <ul>
+        <ul class="clean-list">
           <li>Incident Management & Diagnostics</li>
           <li>Remote Support & Ticketing</li>
           <li>Hardware & Software Troubleshooting</li>
@@ -164,9 +169,9 @@
         </ul>
       </div>
 
-      <div class="card fade-soft">
+      <div class="card">
         <h3>Certifications</h3>
-        <ul>
+        <ul class="clean-list">
           <li>Google IT Support Professional Certificate</li>
           <li>Introduction to Cybersecurity Careers</li>
           <li>Introduction to Hardware & Operating Systems</li>
@@ -174,21 +179,17 @@
           <li>Artificial Intelligence on Microsoft Azure</li>
         </ul>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- LEADERSHIP -->
-<section id="leadership" class="fade-soft">
+<section id="leadership" class="fade-in">
   <div class="container-wide">
-    <h2>Hospitality Leadership → IT Advantage</h2>
-
-    <div class="card fade-soft">
-      <p>
+    <h2 class="section-title">Hospitality Leadership → IT Advantage</h2>
+    <div class="card">
+      <p style="margin-bottom: 1.5rem; color: var(--text-main);">
         Years of hospitality leadership taught me to stay calm under pressure, communicate clearly, and solve problems quickly — skills that directly strengthen my IT support work.
       </p>
-
       <ul>
         <li>Led teams of 15+ while managing technical operations.</li>
         <li>Developed training that improved system usage and reduced errors.</li>
@@ -199,12 +200,10 @@
   </div>
 </section>
 
-<!-- PROJECTS -->
-<section id="projects" class="fade-soft">
+<section id="projects" class="fade-in">
   <div class="container-wide">
-    <h2>Projects</h2>
-
-    <div class="card fade-soft">
+    <h2 class="section-title">Projects</h2>
+    <div class="card">
       <h3>IT Documentation & Knowledge Base</h3>
       <p>
         Built internal troubleshooting guides and SOPs that improved first‑contact resolution and reduced repetitive support requests across multiple teams.
@@ -213,49 +212,43 @@
   </div>
 </section>
 
-<!-- CONTACT -->
-<section id="contact" class="fade-soft">
+<section id="speed-grid" class="fade-in">
   <div class="container-wide">
-    <h2>Contact</h2>
-    <p>Email: <strong>aayushh@outlook.com.au</strong></p>
-    <p>Phone: <strong>0448 113 330</strong></p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/aayushacharya" target="_blank">linkedin.com/in/aayushacharya</a></p>
-  </div>
-</section>
-
-<!-- SPEED GRID GAME -->
-<section id="speed-grid" class="fade-soft" style="padding: 4rem 0;">
-  <div class="container-wide">
-    <h2 style="text-align:center; margin-bottom:1rem;">Speed Grid</h2>
-
-    <p id="grid-intro" style="text-align:center; color:#555; margin-bottom:2rem;">
+    <h2 class="section-title" style="text-align:center;">Speed Grid</h2>
+    <p id="grid-intro" style="text-align:center; color:var(--text-muted); margin-bottom:2rem;">
       I have built a simple and fun game where you have to tap numbers in correct order in as less time as possible. Would you like to play?
     </p>
 
     <div class="game-box">
-
       <button id="grid-start">Let's Play</button>
-
       <p id="grid-timer">Time: 0.00s</p>
-
       <div id="grid-area"></div>
-
       <p id="grid-result"></p>
-
       <div id="grid-buttons">
         <button id="grid-restart">Play Again</button>
         <button id="grid-quit">Quit Game</button>
       </div>
-
     </div>
   </div>
 </section>
 
-<script src="script.js"></script>
+<section id="contact" class="fade-in">
+  <div class="container-wide">
+    <div class="card contact-card">
+        <h2 class="section-title">Contact</h2>
+        <div class="contact-links">
+            <p>Email: <a href="mailto:aayushh@outlook.com.au"><strong>aayushh@outlook.com.au</strong></a></p>
+            <p>Phone: <strong>0448 113 330</strong></p>
+            <p>LinkedIn: <a href="https://linkedin.com/in/aayushacharya" target="_blank">linkedin.com/in/aayushacharya</a></p>
+        </div>
+    </div>
+  </div>
+</section>
 
 <footer>
     © 2026 Aayush Acharya — All Rights Reserved. Created in GitHub using HTML
 </footer>
 
+<script src="script.js"></script>
 </body>
 </html>
