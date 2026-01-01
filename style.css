@@ -47,14 +47,6 @@ a:hover { color: var(--accent); }
 
 .logo { font-weight: 700; font-size: 1.1rem; }
 .nav-links { display: flex; gap: 1.5rem; font-size: 0.9rem; align-items: center; }
-.btn-contact {
-    background: var(--text-main);
-    color: var(--bg-main) !important;
-    padding: 0.5rem 1rem;
-    border-radius: 6px;
-    font-weight: 600;
-}
-.btn-contact:hover { opacity: 0.9; }
 
 /* --- 3. HEADER & LAYOUT --- */
 .container-wide {
@@ -186,6 +178,22 @@ section { padding: 4rem 0; }
     cursor: pointer;
 }
 
+/* UPDATED: Hides timer and extra buttons by default */
+#grid-timer {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-main);
+  display: none; 
+}
+
+#grid-buttons {
+  margin-top: 1.5rem;
+  display: none; 
+  gap: 10px;
+  justify-content: center;
+}
+
 footer {
     text-align: center;
     padding: 3rem 0;
@@ -216,4 +224,36 @@ footer {
     background-color: transparent;
     color: var(--accent);
     transform: translateY(-2px);
+}
+
+/* --- SCROLL TO TOP BUTTON --- */
+.btn-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--accent); 
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    opacity: 0; /* Hidden by default */
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.btn-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.btn-top:hover {
+    background-color: var(--text-main);
+    color: var(--bg-main);
+    transform: translateY(-5px);
 }
