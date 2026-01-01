@@ -1,552 +1,532 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Aayush Acharya | Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aayush Acharya | Portfolio</title>
+  <meta name="description" content="Aayush Acharya — IT Support Specialist in Sydney. System & network administration, Microsoft 365, AV systems, POS platforms, and technical troubleshooting." />
 
-<style>
-/* GLOBAL RESET */
-body {
-    margin: 0;
-    padding: 0;
-    background: #ffffff;
-    font-family: "Segoe UI", sans-serif;
-    color: #1a1a1a;
-    text-align: left;
-    line-height: 1.6;
-}
+  <!-- Open Graph -->
+  <meta property="og:title" content="Aayush Acharya | Portfolio">
+  <meta property="og:description" content="IT Support Specialist in Sydney. System & network administration, Microsoft 365, AV systems, POS platforms, and technical troubleshooting.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="/aayush.png">
+  <meta property="og:url" content="https://www.aayushacharya.com.au/">
 
-/* REMOVE BULLET POINTS */
-ul {
-    list-style: none;
-    padding-left: 0;
-    margin-left: 0;
-}
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Aayush Acharya | Portfolio">
+  <meta name="twitter:description" content="IT Support Specialist in Sydney. System & network administration, Microsoft 365, AV systems, POS platforms, and technical troubleshooting.">
+  <meta name="twitter:image" content="/aayush.png">
 
-/* SUBTLE FADE-IN ANIMATION */
-.fade-soft {
-    opacity: 0;
-    transform: translateY(10px);
-    animation: fadeSoft 0.8s ease-out forwards;
-}
-
-@keyframes fadeSoft {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" type="image/x :root {
+      --bg: #ffffff;
+      --card: #ffffff;
+      --text: #1a1a1a;
+      --muted: #555555;
+      --primary: #2563eb;
+      --border: #e5e7eb;
+      --radius: 14px;
+      --shadow: 0 4px 18px rgba(0,0,0,0.06);
+      --max-width: 900px;
+      --section-padding: 4rem;
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+
+    * { box-sizing: border-box; }
+
+    /* GLOBAL */
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+      color: var(--text);
+      line-height: 1.4; /* tighter spacing */
+      text-align: left; /* force left alignment globally */
     }
-}
 
-/* LANDING PAGE */
-.container {
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 4rem 1.5rem;
-}
+    ul {
+      list-style: none;
+      padding-left: 0;
+      margin-left: 0;
+    }
 
-h1 {
-    font-size: 3rem;
-    font-weight: 800;
-    margin: 0 0 1rem 0;
-    letter-spacing: -0.5px;
-}
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { text-decoration: underline; }
 
-p {
-    font-size: 1.2rem;
-    color: #555555;
-    margin-bottom: 2.5rem;
-}
+    /* ANIMATION */
+    .fade-soft {
+      opacity: 0;
+      transform: translateY(10px);
+      animation: fadeSoft 0.8s ease-out forwards;
+    }
 
-.profile-photo {
-    width: 615px;
-    height: 495px;
-    object-fit: cover;
-    border-radius: 4px;
-    border: 3px solid #ffffff;
-    box-shadow: 0 6px 24px rgba(0,0,0,0.12);
-    margin-top: 1rem;
-}
+    @keyframes fadeSoft {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
 
-/* PORTFOLIO THEME */
-:root {
-  --bg: #fafafa;
-  --card: #ffffff;
-  --text: #1a1a1a;
-  --muted: #555555;
-  --primary: #2563eb;
-  --accent: #d97706;
-  --border: #e5e7eb;
-  --radius: 14px;
-  --shadow: 0 4px 18px rgba(0,0,0,0.06);
-  --max-width: 900px;
-  --section-padding: 5rem;
-}
+    /* LAYOUT */
+    section {
+      padding: var(--section-padding) 0;
+    }
 
-section {
-  padding: var(--section-padding) 0;
-  text-align: center;
-}
+    .container {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+    }
 
-.container-wide {
-  width: 100%;
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 1.5rem;
-}
+    .container-wide {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
 
-h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  text-align: center;
-}
+    /* TYPOGRAPHY */
+    h1 {
+      font-size: 2.6rem;
+      font-weight: 800;
+      margin: 0 0 0.75rem 0;
+      letter-spacing: -0.3px;
+    }
 
-.card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 1.5rem;
-  box-shadow: var(--shadow);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
+    h2 {
+      font-size: 2rem;
+      margin: 0 0 1rem 0;
+    }
 
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 24px rgba(0,0,0,0.08);
-}
+    h3 {
+      margin: 0 0 0.5rem 0;
+      font-size: 1.25rem;
+    }
 
-.two-col {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2.5rem;
-}
+    p {
+      font-size: 1rem;
+      color: var(--muted);
+      margin: 0 0 1rem 0;
+    }
 
-@media (max-width: 900px) {
-  .two-col {
-    grid-template-columns: 1fr;
-  }
-}
+    /* IMAGE */
+    .profile-photo {
+      width: 100%;
+      max-width: 615px;
+      aspect-ratio: 615 / 495;
+      object-fit: cover;
+      border-radius: 6px;
+      border: 3px solid #ffffff;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+      margin-top: 1rem;
+      display: block;
+    }
 
-/* HERO */
-.hero {
-  text-align: center;
-  padding-top: 4rem;
-}
+    /* CARDS & GRID */
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      box-shadow: var(--shadow);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+    }
 
-.hero p {
-  max-width: 700px;
-  margin: 0 auto;
-  color: var(--muted);
-  font-size: 1.15rem;
-}
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+    @media (max-width: 900px) {
+      .two-col { grid-template-columns: 1fr; }
+    }
 
-.badge {
-  display: inline-block;
-  padding: 0.6rem 1.2rem;
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  font-size: 1.35rem;
-  font-weight: 600;
-  margin-bottom: 1.8rem;
-}
+    /* HERO BADGE */
+    .badge {
+      display: inline-block;
+      padding: 0.4rem 0.9rem;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #374151;
+      margin: 0 0 0.75rem 0;
+    }
 
-/* SPEED GRID GAME */
-@keyframes shake {
-  0% { transform: translateX(0); }
-  25% { transform: translateX(-4px); }
-  50% { transform: translateX(4px); }
-  75% { transform: translateX(-4px); }
-  100% { transform: translateX(0); }
-}
+    /* GAME */
+    @keyframes shake {
+      0% { transform: translateX(0); }
+      25% { transform: translateX(-4px); }
+      50% { transform: translateX(4px); }
+      75% { transform: translateX(-4px); }
+      100% { transform: translateX(0); }
+    }
+    .shake { animation: shake 0.25s ease; }
 
-.shake {
-  animation: shake 0.25s ease;
-}
-
-/* FOOTER */
-footer {
-    font-size: 0.9rem;
-    color: #777777;
-    padding: 2rem 0;
-}
-</style>
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Webpage</title>
-    <link href="style.css" rel="stylesheet">
+    /* FOOTER */
+    footer {
+      font-size: 0.9rem;
+      color: #777777;
+      padding: 2rem 0;
+      text-align: left;
+    }
+  </style>
 </head>
 <body>
 
-<!-- LANDING PAGE -->
-<div class="container fade-soft">
+  <!-- HEADER / LANDING -->
+  <header class="container fade-soft" role="banner">
     <h1>Aayush Acharya</h1>
     <p>Welcome to my portfolio</p>
-    <img src="aayush.png" alt="Aayush Acharya" class="profile-photo">
-</div>
+    /aayush.png
+  </header>
 
-<!-- HERO -->
-<section class="hero fade-soft">
-  <div class="container-wide">
-    <div class="badge">IT Support Specialist • Sydney, Australia</div>
-    <h1>Technical Support with<br>Precision, Clarity & Reliability</h1>
-    <p>
-      I specialise in System and Network administration, IT support and troubleshooting — blending technical expertise with years of hospitality leadership to deliver calm, structured problem-solving services.
-    </p>
-  </div>
-</section>
-
-<!-- EXPERIENCE -->
-<section id="experience" class="fade-soft">
-  <div class="container-wide">
-    <h2>Experience</h2>
-
-    <div class="card" style="margin-bottom: 3rem; min-height: 220px;">
-      <h3>IT support and technical troubleshooting across enterprise and operational environments</h3>
+  <!-- HERO -->
+  <section class="fade-soft">
+    <div class="container-wide">
+      <span class="badge">IT Support Specialist • Sydney, Australia</span>
+      <h2>Technical Support with Precision, Clarity &amp; Reliability</h2>
       <p>
-        Experienced in supporting large-scale corporate environments and multi‑venue operations, delivering reliable technical troubleshooting, system administration, and user support across AV and enterprise IT systems.
+        I specialise in System and Network administration, IT support and troubleshooting — blending technical expertise with years of hospitality leadership to deliver calm, structured problem‑solving services.
       </p>
     </div>
+  </section>
 
-    <div class="two-col">
+  <!-- EXPERIENCE -->
+  <section id="experience" class="fade-soft">
+    <div class="container-wide">
+      <h2>Experience</h2>
 
-      <div>
-        <h3>Events & Hospitality Supervisor</h3>
-        <p><strong>Gastronomy Group – PwC Sydney</strong> | September 2025 – Present</p>
-        <div class="card fade-soft" style="min-height: 420px;">
-          <ul>
-            <li>Managing audiovisual systems and technical configurations for executive boardrooms.</li>
-            <li>Responding to escalated technical incidents using systematic troubleshooting methodology.</li>
-            <li>Administering user accounts and access permissions across Microsoft Teams, Outlook, and Humanforce for 20+ staff members.</li>
-            <li>Supporting 1,000+ daily users across PwC Sydney’s corporate campus.</li>
-          </ul>
+      <div class="card" style="margin-bottom: 2rem;">
+        <h3>IT support and technical troubleshooting across enterprise and operational environments</h3>
+        <p>
+          Experienced in supporting large-scale corporate environments and multi‑venue operations, delivering reliable technical troubleshooting, system administration, and user support across AV and enterprise IT systems.
+        </p>
+      </div>
 
-          <h4 style="margin-top:1rem;">Key Skills</h4>
-          <ul>
-            <li>AV Systems</li>
-            <li>Microsoft 365</li>
-            <li>Technical Support</li>
-            <li>SLA Management</li>
-            <li>Root‑Cause Analysis</li>
-          </ul>
+      <!-- Two-column row -->
+      <div class="two-col" style="margin-bottom: 2rem;">
+        <div>
+          <h3>Events &amp; Hospitality Supervisor</h3>
+          <p><strong>Gastronomy Group – PwC Sydney</strong> | September 2025 – Present</p>
+          <div class="card">
+            <ul>
+              <li>Managing audiovisual systems and technical configurations for executive boardrooms.</li>
+              <li>Responding to escalated technical incidents using systematic troubleshooting methodology.</li>
+              <li>Administering user accounts and access permissions across Microsoft Teams, Outlook, and Humanforce for 20+ staff members.</li>
+              <li>Supporting 1,000+ daily users across PwC Sydney’s corporate campus.</li>
+            </ul>
+
+            <h4 style="margin-top:1rem;">Key Skills</h4>
+            <ul>
+              <li>AV Systems</li>
+              <li>Microsoft 365</li>
+              <li>Technical Support</li>
+              <li>SLA Management</li>
+              <li>Root‑Cause Analysis</li>
+            </ul>
+          </div>
+        </div>
+
+        <div>
+          <h3>Venue Systems &amp; Operations Specialist</h3>
+          <p><strong>Al Aseel Group (The Papermill Food)</strong> | July 2024 – September 2025</p>
+          <div class="card">
+            <ul>
+              <li>Managed complete technical support lifecycle across three business venues.</li>
+              <li>Troubleshooting POS systems, reservation platforms, inventory management software, and networking equipment.</li>
+              <li>Created user accounts and configured role‑based access controls across multiple systems.</li>
+              <li>Developed documentation and training that reduced support requests by 30%.</li>
+            </ul>
+
+            <h4 style="margin-top:1rem;">Key Skills</h4>
+            <ul>
+              <li>POS Systems</li>
+              <li>Network Infrastructure</li>
+              <li>User Provisioning</li>
+              <li>Monday.com</li>
+              <li>Knowledge Base</li>
+            </ul>
+          </div>
         </div>
       </div>
 
-      <div>
-        <h3>Venue Systems & Operations Specialist</h3>
-        <p><strong>Al Aseel Group (The Papermill Food)</strong> | July 2024 – September 2025</p>
-        <div class="card fade-soft" style="min-height: 420px;">
-          <ul>
-            <li>Managed complete technical support lifecycle across three business venues.</li>
-            <li>Troubleshooting POS systems, reservation platforms, inventory management software, and networking equipment.</li>
-            <li>Created user accounts and configured role‑based access controls across multiple systems.</li>
-            <li>Developed documentation and training that reduced support requests by 30%.</li>
-          </ul>
-
-          <h4 style="margin-top:1rem;">Key Skills</h4>
-          <ul>
-            <li>POS Systems</li>
-            <li>Network Infrastructure</li>
-            <li>User Provisioning</li>
-            <li>Monday.com</li>
-            <li>Knowledge Base</li>
-          </ul>
-           
-        </div>
-      </div>
-
-    </div>
-
-    <div class="fade-soft" style="margin-top:3rem;">
-      <h3>IT Documentation & Knowledge Base</h3>
-      <p><strong>Technical Project</strong> | 2021 – Present</p>
-      <div class="card" style="min-height: 300px;">
+      <!-- New full-width experience to keep layout balanced -->
+      <div class="card">
+        <h3>IT Support Specialist</h3>
+        <p><strong>Al Aseel Group – Bankstown, NSW</strong> | July 2023 – July 2024</p>
         <ul>
-          <li>Created comprehensive troubleshooting guides and SOPs for common technical issues.</li>
-          <li>Developed user‑friendly documentation for POS systems, reservation platforms, and Microsoft 365 applications.</li>
-          <li>Built internal wiki‑style knowledge base improving team self‑service capabilities.</li>
+          <li>Provided Level 1 and Level 2 technical support for POS systems, reservation platforms, and networking infrastructure, managing 15–20 support requests daily with 95%+ first‑call resolution rate.</li>
+          <li>Managed complete user account lifecycle including provisioning, modification, and deprovisioning across enterprise systems, ensuring compliance with security policies and access control standards.</li>
+          <li>Troubleshot hardware and software issues using Windows Event Viewer analysis, network connectivity testing, and application log review.</li>
+          <li>Developed comprehensive technical documentation including troubleshooting flowcharts, FAQ documents, and quick‑reference guides.</li>
+          <li>Coordinated with external vendors for equipment maintenance, system upgrades, and complex technical issues; maintained network infrastructure by performing regular system health checks and implementing security patches.</li>
         </ul>
 
         <h4 style="margin-top:1rem;">Key Skills</h4>
         <ul>
-          <li>Documentation</li>
-          <li>Knowledge Management</li>
-          <li>SOPs</li>
-          <li>Training Materials</li>
+          <li>POS Systems</li>
+          <li>Network Infrastructure</li>
+          <li>User Account Management</li>
+          <li>Technical Documentation</li>
+          <li>Vendor Coordination</li>
         </ul>
       </div>
     </div>
+  </section>
 
-  </div>
-</section>
+  <!-- SKILLS -->
+  <section id="skills" class="fade-soft">
+    <div class="container-wide">
+      <h2>Technical Skills &amp; Certifications</h2>
+      <div class="two-col">
+        <div class="card">
+          <h3>Technical Skills</h3>
+          <ul>
+            <li>Incident Management &amp; Diagnostics</li>
+            <li>Remote Support &amp; Ticketing</li>
+            <li>Hardware &amp; Software Troubleshooting</li>
+            <li>Microsoft 365 &amp; Azure</li>
+            <li>TCP/IP, DNS, DHCP</li>
+            <li>Windows, macOS, Linux</li>
+            <li>Active Directory &amp; PowerShell</li>
+          </ul>
+        </div>
 
-<!-- SKILLS -->
-<section id="skills" class="fade-soft">
-  <div class="container-wide">
-    <h2>Technical Skills & Certifications</h2>
-
-    <div class="two-col">
-
-      <div class="card fade-soft">
-        <h3>Technical Skills</h3>
-        <ul>
-          <li>Incident Management & Diagnostics</li>
-          <li>Remote Support & Ticketing</li>
-          <li>Hardware & Software Troubleshooting</li>
-          <li>Microsoft 365 & Azure</li>
-          <li>TCP/IP, DNS, DHCP</li>
-          <li>Windows, macOS, Linux</li>
-          <li>Active Directory & PowerShell</li>
-        </ul>
+        <div class="card">
+          <h3>Certifications</h3>
+          <ul>
+            <li>Google IT Support Professional Certificate</li>
+            <li>Introduction to Cybersecurity Careers</li>
+            <li>Introduction to Hardware &amp; Operating Systems</li>
+            <li>Microsoft 365 Ecosystem</li>
+            <li>Artificial Intelligence on Microsoft Azure</li>
+          </ul>
+        </div>
       </div>
-
-      <div class="card fade-soft">
-        <h3>Certifications</h3>
-        <ul>
-          <li>Google IT Support Professional Certificate</li>
-          <li>Introduction to Cybersecurity Careers</li>
-          <li>Introduction to Hardware & Operating Systems</li>
-          <li>Microsoft 365 Ecosystem</li>
-          <li>Artificial Intelligence on Microsoft Azure</li>
-        </ul>
-      </div>
-
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- LEADERSHIP -->
-<section id="leadership" class="fade-soft">
-  <div class="container-wide">
-    <h2>Hospitality Leadership → IT Advantage</h2>
+  <!-- LEADERSHIP -->
+  <section id="leadership" class="fade-soft">
+    <div class="container-wide">
+      <h2>Hospitality Leadership → IT Advantage</h2>
+      <div class="card">
+        <p>
+          Years of hospitality leadership taught me to stay calm under pressure, communicate clearly, and solve problems quickly — skills that directly strengthen my IT support work.
+        </p>
+        <ul>
+          <li>Led teams of 15+ while managing technical operations.</li>
+          <li>Developed training that improved system usage and reduced errors.</li>
+          <li>Created documentation libraries that cut support requests by 30%.</li>
+          <li>Excelled in environments requiring fast, structured decision‑making.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-    <div class="card fade-soft">
-      <p>
-        Years of hospitality leadership taught me to stay calm under pressure, communicate clearly, and solve problems quickly — skills that directly strengthen my IT support work.
+  <!-- PROJECTS -->
+  <section id="projects" class="fade-soft">
+    <div class="container-wide">
+      <h2>Projects</h2>
+      <div class="card">
+        <h3>IT Documentation &amp; Knowledge Base</h3>
+        <p>
+          Built internal troubleshooting guides and SOPs that improved first‑contact resolution and reduced repetitive support requests across multiple teams.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="fade-soft">
+    <div class="container-wide">
+      <h2>Contact</h2>
+      <p>Email: <strong><a href="mailtooutlook.com.auaayushh@outlook.com.au</a></strong></p>
+      <p>Phone: <strong>tel:+614481133300448 113 330</a></strong></p>
+      <p>LinkedIn: <a href="https://linkedin.com/in/aayushnkedin.com/in/aayushacharya</a></p>
+    </div>
+  </section>
+
+  <!-- SPEED GRID GAME -->
+  <section id="speed-grid" class="fade-soft" style="padding-top: 0;">
+    <div class="container-wide">
+      <h2>Speed Grid</h2>
+      <p id="grid-intro">
+        Tap numbers in ascending order as fast as you can. Ready to play?
       </p>
 
-      <ul>
-        <li>Led teams of 15+ while managing technical operations.</li>
-        <li>Developed training that improved system usage and reduced errors.</li>
-        <li>Created documentation libraries that cut support requests by 30%.</li>
-        <li>Excelled in environments requiring fast, structured decision‑making.</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- PROJECTS -->
-<section id="projects" class="fade-soft">
-  <div class="container-wide">
-    <h2>Projects</h2>
-
-    <div class="card fade-soft">
-      <h3>IT Documentation & Knowledge Base</h3>
-      <p>
-        Built internal troubleshooting guides and SOPs that improved first‑contact resolution and reduced repetitive support requests across multiple teams.
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="fade-soft">
-  <div class="container-wide">
-    <h2>Contact</h2>
-    <p>Email: <strong>aayushh@outlook.com.au</strong></p>
-    <p>Phone: <strong>0448 113 330</strong></p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/aayushacharya" target="_blank">linkedin.com/in/aayushacharya</a></p>
-  </div>
-</section>
-
-<!-- SPEED GRID GAME -->
-<section id="speed-grid" class="fade-soft" style="padding: 4rem 0;">
-  <div class="container-wide">
-    <h2 style="text-align:center; margin-bottom:1rem;">Speed Grid</h2>
-
-    <p id="grid-intro" style="text-align:center; color:#555; margin-bottom:2rem;">
-      I have built a simple and fun game where you have to tap numbers in correct order in as less time as possible. Would you like to play?
-    </p>
-
-    <div class="game-box" style="
-      max-width: 400px;
-      margin: 0 auto;
-      background: #ffffff;
-      border: 1px solid #e5e7eb;
-      border-radius: 14px;
-      padding: 2rem;
-      text-align: center;
-      box-shadow: 0 4px 18px rgba(0,0,0,0.06);
-    ">
-
-      <button id="grid-start" style="
-        padding:0.8rem 1.6rem;
-        background:#2563eb;
-        color:white;
-        border:none;
-        border-radius:10px;
-        font-size:1rem;
-        font-weight:600;
-        cursor:pointer;
-      ">Let's Play</button>
-
-      <p id="grid-timer" style="
-        margin-top:1rem;
-        font-size:1.1rem;
-        font-weight:600;
-        display:none;
-      ">Time: 0.00s</p>
-
-      <div id="grid-area" style="
-        display:none;
-        margin-top:1.5rem;
-        display:grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap:10px;
-      "></div>
-
-      <p id="grid-result" style="margin-top:1.5rem; font-weight:600;"></p>
-
-      <div id="grid-buttons" style="margin-top:1.5rem; display:none; gap:10px; justify-content:center;">
-        <button id="grid-restart" style="
-          padding:0.7rem 1.4rem;
-          background:#2563eb;
+      <div class="game-box" style="
+        max-width: 420px;
+        background: #ffffff;
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 1.5rem;
+        box-shadow: var(--shadow);
+      ">
+        <button id="grid-start" style="
+          padding:0.7rem 1.2rem;
+          background:var(--primary);
           color:white;
           border:none;
           border-radius:10px;
           font-size:1rem;
           font-weight:600;
           cursor:pointer;
-        ">Play Again</button>
+        ">Let's Play</button>
 
-        <button id="grid-quit" style="
-          padding:0.7rem 1.4rem;
-          background:#6b7280;
-          color:white;
-          border:none;
-          border-radius:10px;
-          font-size:1rem;
-          font-weight:600;
-          cursor:pointer;
-        ">Quit Game</button>
+        <p id="grid-timer" style="margin-top:0.8rem; font-size:1rem; font-weight:600; display:none;">Time: 0.00s</p>
+
+        <div id="grid-area" style="
+          display:none; /* starts hidden */
+          margin-top:1rem;
+          grid-template-columns: repeat(4, 1fr);
+          gap:10px;
+        "></div>
+
+        <p id="grid-result" style="margin-top:1rem; font-weight:600;"></p>
+
+        <div id="grid-buttons" style="margin-top:1rem; display:none; gap:10px;">
+          <button id="grid-restart" style="
+            padding:0.6rem 1.1rem;
+            background:#2563eb;
+            color:white;
+            border:none;
+            border-radius:10px;
+            font-size:1rem;
+            font-weight:600;
+            cursor:pointer;
+          ">Play Again</button>
+
+          <button id="grid-quit" style="
+            padding:0.6rem 1.1rem;
+            background:#6b7280;
+            color:white;
+            border:none;
+            border-radius:10px;
+            font-size:1rem;
+            font-weight:600;
+            cursor:pointer;
+          ">Quit Game</button>
+        </div>
       </div>
-
     </div>
-  </div>
-</section>
+  </section>
 
-<script>
-  const startBtn = document.getElementById("grid-start");
-  const restartBtn = document.getElementById("grid-restart");
-  const quitBtn = document.getElementById("grid-quit");
-  const gridArea = document.getElementById("grid-area");
-  const timerDisplay = document.getElementById("grid-timer");
-  const resultDisplay = document.getElementById("grid-result");
-  const introMessage = document.getElementById("grid-intro");
-  const buttonsRow = document.getElementById("grid-buttons");
+  <footer class="container-wide">
+    © 2026 Aayush Acharya — All Rights Reserved. Built with HTML/CSS/JS & GitHub Pages.
+  </footer>
 
-  let nextNumber = 1;
-  let startTime;
-  let timerInterval;
+  <script>
+    const startBtn = document.getElementById("grid-start");
+    const restartBtn = document.getElementById("grid-restart");
+    const quitBtn = document.getElementById("grid-quit");
+    const gridArea = document.getElementById("grid-area");
+    const timerDisplay = document.getElementById("grid-timer");
+    const resultDisplay = document.getElementById("grid-result");
+    const introMessage = document.getElementById("grid-intro");
+    const buttonsRow = document.getElementById("grid-buttons");
 
-  function startGame() {
-    nextNumber = 1;
-    resultDisplay.textContent = "";
-    buttonsRow.style.display = "none";
-    gridArea.style.display = "grid";
-    timerDisplay.style.display = "block";
-    startBtn.style.display = "none";
-    introMessage.style.display = "none";
+    let nextNumber = 1;
+    let startTime;
+    let timerInterval;
 
-    timerDisplay.textContent = "Time: 0.00s";
-    startTime = Date.now();
-    timerInterval = setInterval(updateTimer, 10);
+    function startGame() {
+      // Defensive clear in case of a lingering interval
+      if (timerInterval) clearInterval(timerInterval);
 
-    const numbers = Array.from({ length: 16 }, (_, i) => i + 1)
-      .sort(() => Math.random() - 0.5);
+      nextNumber = 1;
+      resultDisplay.textContent = "";
+      buttonsRow.style.display = "none";
+      gridArea.style.display = "grid"; // show grid
+      timerDisplay.style.display = "block";
+      startBtn.style.display = "none";
+      introMessage.style.display = "none";
 
-    gridArea.innerHTML = "";
+      timerDisplay.textContent = "Time: 0.00s";
+      startTime = Date.now();
+      timerInterval = setInterval(updateTimer, 10);
 
-    numbers.forEach(num => {
-      const cell = document.createElement("div");
-      cell.textContent = num;
-      cell.style.padding = "1rem";
-      cell.style.background = "#f3f4f6";
-      cell.style.borderRadius = "10px";
-      cell.style.fontSize = "1.2rem";
-      cell.style.fontWeight = "600";
-      cell.style.cursor = "pointer";
-      cell.style.userSelect = "none";
-      cell.style.transition = "background 0.2s, transform 0.2s";
+      const numbers = Array.from({ length: 16 }, (_, i) => i + 1)
+        .sort(() => Math.random() - 0.5);
 
-      cell.addEventListener("click", () => handleClick(num, cell));
+      gridArea.innerHTML = "";
 
-      gridArea.appendChild(cell);
-    });
-  }
-
-  function handleClick(num, cell) {
-    if (num === nextNumber) {
-      cell.style.background = "#d1fae5";
-      cell.style.color = "#065f46";
-      cell.style.pointerEvents = "none";
-      nextNumber++;
-
-      if (nextNumber > 16) endGame();
-    } else {
-      cell.classList.add("shake");
-      cell.style.background = "#fee2e2";
-      cell.style.color = "#991b1b";
-
-      setTimeout(() => {
-        cell.classList.remove("shake");
+      numbers.forEach(num => {
+        const cell = document.createElement("div");
+        cell.textContent = num;
+        cell.style.padding = "0.9rem";
         cell.style.background = "#f3f4f6";
-        cell.style.color = "black";
-      }, 300);
+        cell.style.borderRadius = "10px";
+        cell.style.fontSize = "1.1rem";
+        cell.style.fontWeight = "600";
+        cell.style.cursor = "pointer";
+        cell.style.userSelect = "none";
+        cell.style.transition = "background 0.2s, transform 0.2s";
+        cell.setAttribute("aria-label", "Number " + num);
+
+        cell.addEventListener("click", () => handleClick(num, cell));
+
+        gridArea.appendChild(cell);
+      });
     }
-  }
 
-  function updateTimer() {
-    const elapsed = (Date.now() - startTime) / 1000;
-    timerDisplay.textContent = "Time: " + elapsed.toFixed(2) + "s";
-  }
+    function handleClick(num, cell) {
+      if (num === nextNumber) {
+        cell.style.background = "#d1fae5";
+        cell.style.color = "#065f46";
+        cell.style.pointerEvents = "none";
+        nextNumber++;
 
-  function endGame() {
-    clearInterval(timerInterval);
+        if (nextNumber > 16) endGame();
+      } else {
+        cell.classList.add("shake");
+        cell.style.background = "#fee2e2";
+        cell.style.color = "#991b1b";
 
-    const finalTime = timerDisplay.textContent.replace("Time: ", "");
+        setTimeout(() => {
+          cell.classList.remove("shake");
+          cell.style.background = "#f3f4f6";
+          cell.style.color = "black";
+        }, 300);
+      }
+    }
 
-    resultDisplay.textContent =
-      "Nice work! You completed the challenge in " + finalTime + ". Want to try beating your score?";
+    function updateTimer() {
+      const elapsed = (Date.now() - startTime) / 1000;
+      timerDisplay.textContent = "Time: " + elapsed.toFixed(2) + "s";
+    }
 
-    buttonsRow.style.display = "flex";
-  }
+    function endGame() {
+      clearInterval(timerInterval);
 
-  // Quit game → return to intro
-  quitBtn.addEventListener("click", () => {
-    gridArea.style.display = "none";
-    timerDisplay.style.display = "none";
-    resultDisplay.textContent = "";
-    buttonsRow.style.display = "none";
-    startBtn.style.display = "inline-block";
-    introMessage.style.display = "block";
-  });
+      const finalTime = timerDisplay.textContent.replace("Time: ", "");
+      resultDisplay.textContent =
+        "Nice work! You completed the challenge in " + finalTime + ". Want to try beating your score?";
 
-  startBtn.addEventListener("click", startGame);
-  restartBtn.addEventListener("click", startGame);
-</script>
+      buttonsRow.style.display = "flex";
+    }
 
-<footer>
-    © 2026 Aayush Acharya — All Rights Reserved. Created in github using HTML
-</footer>
+    // Quit game → return to intro
+    quitBtn.addEventListener("click", () => {
+      gridArea.style.display = "none";
+      timerDisplay.style.display = "none";
+      resultDisplay.textContent = "";
+      buttonsRow.style.display = "none";
+      startBtn.style.display = "inline-block";
+      introMessage.style.display = "block";
+    });
 
-    </section>
+    startBtn.addEventListener("click", startGame);
+    restartBtn.addEventListener("click", startGame);
+  </script>
 </body>
-
 </html>
+
