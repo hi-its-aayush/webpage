@@ -11,19 +11,29 @@ let nextNumber = 1;
 let startTime;
 let timerInterval;
 
+// Listen for the start button click
+startBtn.addEventListener("click", startGame);
+// Listen for restart
+restartBtn.addEventListener("click", startGame);
+
 function startGame() {
   nextNumber = 1;
   resultDisplay.textContent = "";
+  
+  // Hide setup elements
   buttonsRow.style.display = "none";
-  gridArea.style.display = "grid";
-  timerDisplay.style.display = "block";
   startBtn.style.display = "none";
   introMessage.style.display = "none";
+  
+  // Show game elements
+  gridArea.style.display = "grid";
+  timerDisplay.style.display = "block";
 
   timerDisplay.textContent = "Time: 0.00s";
   startTime = Date.now();
   timerInterval = setInterval(updateTimer, 10);
 
+  // Generate numbers 1-16
   const numbers = Array.from({ length: 16 }, (_, i) => i + 1)
     .sort(() => Math.random() - 0.5);
 
@@ -32,14 +42,18 @@ function startGame() {
   numbers.forEach(num => {
     const cell = document.createElement("div");
     cell.textContent = num;
+    
+    // --- STYLING (Updated for Dark Mode) ---
     cell.style.padding = "1rem";
-    cell.style.background = "#262626";
-    cell.style.borderRadius = "10px";
+    cell.style.background = "#262626"; // Dark Grey
+    cell.style.color = "#ffffff";      // White Text
+    cell.style.borderRadius = "8px";
     cell.style.fontSize = "1.2rem";
     cell.style.fontWeight = "600";
     cell.style.cursor = "pointer";
     cell.style.userSelect = "none";
-    cell.style.transition = "background 0.2s, transform 0.2s";
+    cell.style.textAlign = "center";
+    cell.style.transition = "background 0.2s, transform 0.1s";
 
     cell.addEventListener("click", () => handleClick(num, cell));
 
@@ -49,21 +63,22 @@ function startGame() {
 
 function handleClick(num, cell) {
   if (num === nextNumber) {
-    cell.style.background = "#d1fae5";
-    cell.style.color = "#065f46";
+    // Correct tap
+    cell.style.background = "#059669"; // Green
+    cell.style.color = "#ffffff";
     cell.style.pointerEvents = "none";
     nextNumber++;
 
     if (nextNumber > 16) endGame();
   } else {
+    // Wrong tap
     cell.classList.add("shake");
-    cell.style.background = "#fee2e2";
-    cell.style.color = "#991b1b";
+    cell.style.background = "#dc2626"; // Red
+    cell.style.color = "#ffffff";
 
     setTimeout(() => {
       cell.classList.remove("shake");
-      cell.style.background = "#262626";
-      cell.style.color = "white";
+      cell.style.background = "#262626"; // Reset to Dark Grey
     }, 300);
   }
 }
@@ -75,15 +90,27 @@ function updateTimer() {
 
 function endGame() {
   clearInterval(timerInterval);
-
   const finalTime = timerDisplay.textContent.replace("Time: ", "");
-
+  
   resultDisplay.textContent =
-    "Nice work! You completed the challenge in " + finalTime + ". Want to try beating your score?";
-
+    "Nice work! You completed the challenge in " + finalTime + ".";
+    
+  resultDisplay.style.color = "#ededed"; // Ensure text is visible
+  resultDisplay.style.marginBottom = "1rem";
+  
   buttonsRow.style.display = "flex";
+  // Keep the grid visible so they can see their work
 }
 
+// Quit Button Logic
 quitBtn.addEventListener("click", () => {
+  // Hide game area
   gridArea.style.display = "none";
- 
+  timerDisplay.style.display = "none";
+  buttonsRow.style.display = "none";
+  resultDisplay.textContent = "";
+  
+  // Show start screen again
+  startBtn.style.display = "inline-block";
+  introMessage.style.display = "block";
+});
