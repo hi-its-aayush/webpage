@@ -114,3 +114,32 @@ quitBtn.addEventListener("click", () => {
   startBtn.style.display = "inline-block";
   introMessage.style.display = "block";
 });
+// --- CONTACT REVEAL LOGIC ---
+function revealContactInfo() {
+    // 1. Hide the Captcha
+    document.getElementById('captcha-container').style.display = 'none';
+
+    // 2. Define the details (Broken up to hide from basic scrapers)
+    const emailUser = "aayushh";
+    const emailDom = "outlook.com.au";
+    const fullEmail = emailUser + "@" + emailDom;
+    const phone = "0448 113 330";
+
+    // 3. Inject the HTML (Exactly matching your old design)
+    const contactDiv = document.getElementById('contact-info');
+    contactDiv.innerHTML = `
+        <p style="margin-bottom: 0.5rem;">
+            Email: <a href="mailto:${fullEmail}"><strong>${fullEmail}</strong></a>
+        </p>
+        <p style="margin-bottom: 0.5rem;">
+            Phone: <strong>${phone}</strong>
+        </p>
+        <p style="margin-bottom: 1.5rem;">
+            LinkedIn: <a href="https://linkedin.com/in/aayushacharya" target="_blank">linkedin.com/in/aayushacharya</a>
+        </p>
+        <a href="cv.pdf" target="_blank" class="btn-cv">View CV</a>
+    `;
+
+    // 4. Show the section
+    contactDiv.style.display = 'block';
+}
