@@ -416,3 +416,18 @@ footer {
     margin: 0;
     height: 100%; /* Makes them same height if possible */
 }
+/* --- THE BIG BLUE BOX --- */
+.game-room-wrapper {
+    background: rgba(59, 130, 246, 0.08); /* Subtle Blue Background */
+    border: 2px solid var(--accent);       /* Solid Blue Border */
+    border-radius: 16px;
+    padding: 2rem;
+    margin-top: 1rem;
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.1); /* Blue Glow */
+}
+
+/* Make inner cards darker so they pop against the blue */
+.game-room-wrapper .game-box {
+    background: rgba(0, 0, 0, 0.3); 
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
