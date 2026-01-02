@@ -114,22 +114,18 @@ quitBtn.addEventListener("click", () => {
   startBtn.style.display = "inline-block";
   introMessage.style.display = "block";
 });
-// --- CONTACT REVEAL LOGIC ---
-function revealContactInfo() {
-    // 1. Hide the Captcha
-    document.getElementById('captcha-container').style.display = 'none';
-
-    // 2. Define the details (Broken up to hide from basic scrapers)
-    const emailUser = "aayushh";
-    const emailDom = "outlook.com.au";
-    const fullEmail = emailUser + "@" + emailDom;
+// --- AUTO-INJECT CONTACT INFO (Stops basic bots) ---
+document.addEventListener("DOMContentLoaded", function() {
+    // 1. Break the email into parts (so scrapers can't find the string)
+    const part1 = "aayushh";
+    const part2 = "outlook.com.au";
+    const email = part1 + "@" + part2;
     const phone = "0448 113 330";
 
-    // 3. Inject the HTML (Exactly matching your old design)
-    const contactDiv = document.getElementById('contact-info');
-    contactDiv.innerHTML = `
+    // 2. Build the HTML (Clickable Links)
+    const content = `
         <p style="margin-bottom: 0.5rem;">
-            Email: <a href="mailto:${fullEmail}"><strong>${fullEmail}</strong></a>
+            Email: <a href="mailto:${email}"><strong>${email}</strong></a>
         </p>
         <p style="margin-bottom: 0.5rem;">
             Phone: <strong>${phone}</strong>
@@ -140,6 +136,9 @@ function revealContactInfo() {
         <a href="cv.pdf" target="_blank" class="btn-cv">View CV</a>
     `;
 
-    // 4. Show the section
-    contactDiv.style.display = 'block';
-}
+    // 3. Inject it instantly
+    const container = document.getElementById('contact-container');
+    if (container) {
+        container.innerHTML = content;
+    }
+});
