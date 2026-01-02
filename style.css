@@ -431,3 +431,30 @@ footer {
     background: rgba(0, 0, 0, 0.3); 
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
+/* --- COMPACT GAME ROOM ADJUSTMENTS --- */
+
+/* 1. Constrain the overall width so it doesn't look huge */
+.game-room-wrapper {
+    max-width: 850px; /* Limits the blue box width */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1.5rem; /* Less padding inside the blue box */
+}
+
+/* 2. Shrink the game cards inside */
+.game-room-wrapper .game-box {
+    padding: 1.2rem;   /* Reduced from 2rem */
+    min-height: auto;  /* Remove forced height if set */
+}
+
+/* 3. Make the game titles slightly smaller */
+.game-room-wrapper h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+/* 4. Tighter spacing for the game text */
+.game-room-wrapper p {
+    margin-bottom: 1rem;
+    font-size: 0.85rem;
+}
