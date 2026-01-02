@@ -506,3 +506,21 @@ footer {
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2); /* Blue Glow */
 }
+/* --- TYPEWRITER CURSOR --- */
+.cursor {
+    display: inline-block;
+    color: var(--accent); /* Blue cursor */
+    margin-left: 5px;
+    animation: blink 1s infinite;
+    font-weight: 400;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Optional: Ensure the H1 keeps its height so the page doesn't jump */
+.hero-title {
+    min-height: 1.2em;
+}
