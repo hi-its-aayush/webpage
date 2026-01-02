@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
   
   <title>Aayush Acharya | Portfolio</title>
   <link rel="icon" type="image/png" href="favicon.png">
@@ -239,20 +238,9 @@
     <div class="card contact-card" style="text-align: center;">
         <h2 class="section-title" style="border: none; margin-bottom: 1rem;">Let's Connect</h2>
         
-        <div id="captcha-container">
-            <p style="margin-bottom: 1rem; color: var(--text-muted);">
-                Please verify you are human to view contact details:
-            </p>
-            
-            <div class="g-recaptcha" 
-                 data-sitekey="6LeWdz0sAAAAAJ1RrHIjGfsnF424c6OZ4oL5Qp4O" 
-                 data-callback="revealContactInfo"
-                 style="display: inline-block;">
-            </div>
+        <div id="contact-container" class="contact-links">
+            <p style="color: var(--text-muted);">Loading contact info...</p>
         </div>
-
-        <div id="contact-info" class="contact-links" style="display: none;">
-            </div>
 
     </div>
   </div>
