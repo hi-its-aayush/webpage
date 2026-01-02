@@ -221,7 +221,25 @@
     </div>
   </div>
 </section>
+<section id="memory-game" class="fade-in">
+  <div class="container-wide">
+    <h2 class="section-title" style="text-align:center;">Tech Memory</h2>
+    <p style="text-align:center; color:var(--text-muted); margin-bottom:2rem;">
+        Test your RAM. Match the pairs of IT icons.
+    </p>
 
+    <div class="game-box">
+      <div class="memory-stats" style="margin-bottom: 1rem; display: flex; justify-content: space-between; padding: 0 1rem;">
+          <span>Moves: <strong id="mem-moves">0</strong></span>
+          <span>Matched: <strong id="mem-score">0</strong>/8</span>
+      </div>
+      
+      <div id="memory-board"></div>
+      
+      <button id="mem-restart" style="margin-top: 2rem;">Reset Memory</button>
+    </div>
+  </div>
+</section>
 <section id="contact" class="fade-in">
   <div class="container-wide">
     <div class="card contact-card" style="text-align: center;">
