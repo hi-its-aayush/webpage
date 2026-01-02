@@ -275,12 +275,11 @@ if(memRestartBtn) {
 }
 // --- TYPEWRITER EFFECT ---
 document.addEventListener("DOMContentLoaded", function() {
-    const text = "Hi, I'm Aayush."; // The text to type
+    const text = "Hi, I'm Aayush."; 
     const element = document.getElementById("typewriter-text");
     const cursor = document.querySelector(".cursor");
     
-    // Safety check
-    if (!element) return;
+    if (!element || !cursor) return;
     
     let index = 0;
     
@@ -288,13 +287,12 @@ document.addEventListener("DOMContentLoaded", function() {
         if (index < text.length) {
             element.textContent += text.charAt(index);
             index++;
-            setTimeout(type, 100); // Typing speed (100ms per letter)
+            setTimeout(type, 100); 
         } else {
-            // Optional: Stop the cursor blinking after typing is done? 
-            // cursor.style.display = 'none'; // Uncomment to hide cursor at end
+            // Typing finished: Add class to stop blinking
+            cursor.classList.add("typing-done");
         }
     }
     
-    // Start typing after a tiny delay
     setTimeout(type, 500);
 });
