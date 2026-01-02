@@ -273,3 +273,28 @@ document.addEventListener('DOMContentLoaded', initMemoryGame);
 if(memRestartBtn) {
     memRestartBtn.addEventListener('click', initMemoryGame);
 }
+// --- TYPEWRITER EFFECT ---
+document.addEventListener("DOMContentLoaded", function() {
+    const text = "Hi, I'm Aayush."; // The text to type
+    const element = document.getElementById("typewriter-text");
+    const cursor = document.querySelector(".cursor");
+    
+    // Safety check
+    if (!element) return;
+    
+    let index = 0;
+    
+    function type() {
+        if (index < text.length) {
+            element.textContent += text.charAt(index);
+            index++;
+            setTimeout(type, 100); // Typing speed (100ms per letter)
+        } else {
+            // Optional: Stop the cursor blinking after typing is done? 
+            // cursor.style.display = 'none'; // Uncomment to hide cursor at end
+        }
+    }
+    
+    // Start typing after a tiny delay
+    setTimeout(type, 500);
+});
