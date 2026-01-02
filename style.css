@@ -333,3 +333,65 @@ footer {
         grid-column: span 2; /* Forces the card to take full width */
     }
 }
+/* --- MEMORY GAME --- */
+#memory-board {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    max-width: 400px;
+    margin: 0 auto;
+    perspective: 1000px; /* Essential for 3D flip */
+}
+
+.mem-card {
+    background-color: transparent;
+    height: 80px;
+    cursor: pointer;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+}
+
+.mem-card.flip {
+    transform: rotateY(180deg);
+}
+
+.mem-front, .mem-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    backface-visibility: hidden; /* Hides the back when flipped */
+    border: 1px solid var(--border);
+}
+
+/* The "Hidden" side (Question Mark) */
+.mem-front {
+    background: #262626;
+    color: var(--text-muted);
+}
+
+/* The "Revealed" side (Icon) */
+.mem-back {
+    background: var(--accent);
+    color: white;
+    transform: rotateY(180deg);
+}
+
+#mem-restart {
+    background: var(--bg-hover);
+    color: var(--text-main);
+    border: 1px solid var(--border);
+    padding: 0.8rem 2rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+#mem-restart:hover {
+    background: var(--border);
+}
