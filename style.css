@@ -535,8 +535,7 @@ footer {
 
 /* New class to stop animation */
 .cursor.typing-done {
-    animation: none; /* Stops blinking */
-    opacity: 1;      /* Keeps it visible (solid) */
+    display: none; /* Stops blinking */
 }
 
 @keyframes blink {
