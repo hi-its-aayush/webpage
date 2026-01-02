@@ -458,3 +458,26 @@ footer {
     margin-bottom: 1rem;
     font-size: 0.85rem;
 }
+/* --- CERTIFICATE LINKS --- */
+.cert-link {
+    display: inline-block;
+    margin-top: 0.3rem;
+    font-size: 0.75rem;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.cert-link:hover {
+    background-color: var(--accent);
+    color: white;
+    transform: translateY(-1px);
+}
+
+.cert-link i {
+    margin-right: 4px; /* Space between icon and text */
+}
