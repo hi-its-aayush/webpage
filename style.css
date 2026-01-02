@@ -483,3 +483,26 @@ footer {
 .cert-link i {
     margin-right: 6px;
 }
+/* --- MASTER CERTIFICATE BUTTON --- */
+.cert-master-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 0.8rem;
+    background-color: rgba(59, 130, 246, 0.1); /* Light Blue Tint */
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.cert-master-btn:hover {
+    background-color: var(--accent);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2); /* Blue Glow */
+}
