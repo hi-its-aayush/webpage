@@ -158,3 +158,118 @@ document.addEventListener("DOMContentLoaded", function() {
         container.innerHTML = content;
     }
 });
+// --- TECH MEMORY GAME LOGIC ---
+
+const memoryBoard = document.getElementById('memory-board');
+const memMovesDisplay = document.getElementById('mem-moves');
+const memScoreDisplay = document.getElementById('mem-score');
+const memRestartBtn = document.getElementById('mem-restart');
+
+// The Icons (FontAwesome classes)
+const icons = [
+    'fa-wifi', 'fa-database', 'fa-server', 'fa-bug', 
+    'fa-microchip', 'fa-terminal', 'fa-lock', 'fa-cloud'
+];
+
+let cards = [];
+let hasFlippedCard = false;
+let lockBoard = false;
+let firstCard, secondCard;
+let moves = 0;
+let matches = 0;
+
+// Initialize Game
+function initMemoryGame() {
+    memoryBoard.innerHTML = '';
+    moves = 0;
+    matches = 0;
+    memMovesDisplay.innerText = moves;
+    memScoreDisplay.innerText = matches;
+    
+    // Create pairs (8 icons * 2 = 16 cards)
+    let deck = [...icons, ...icons];
+    // Shuffle
+    deck.sort(() => 0.5 - Math.random());
+
+    // Build HTML
+    deck.forEach(iconClass => {
+        const card = document.createElement('div');
+        card.classList.add('mem-card');
+        card.dataset.icon = iconClass;
+
+        card.innerHTML = `
+            <div class="mem-front"><i class="fas fa-question"></i></div>
+            <div class="mem-back"><i class="fas ${iconClass}"></i></div>
+        `;
+        
+        card.addEventListener('click', flipCard);
+        memoryBoard.appendChild(card);
+    });
+}
+
+function flipCard() {
+    if (lockBoard) return;
+    if (this === firstCard) return;
+
+    this.classList.add('flip');
+
+    if (!hasFlippedCard) {
+        // First click
+        hasFlippedCard = true;
+        firstCard = this;
+        return;
+    }
+
+    // Second click
+    secondCard = this;
+    incrementMoves();
+    checkForMatch();
+}
+
+function checkForMatch() {
+    let isMatch = firstCard.dataset.icon === secondCard.dataset.icon;
+
+    isMatch ? disableCards() : unflipCards();
+}
+
+function disableCards() {
+    firstCard.removeEventListener('click', flipCard);
+    secondCard.removeEventListener('click', flipCard);
+    
+    matches++;
+    memScoreDisplay.innerText = matches;
+    
+    if(matches === 8) {
+        setTimeout(() => alert("System Restored! RAM Verified."), 500);
+    }
+
+    resetBoard();
+}
+
+function unflipCards() {
+    lockBoard = true;
+
+    setTimeout(() => {
+        firstCard.classList.remove('flip');
+        secondCard.classList.remove('flip');
+        resetBoard();
+    }, 1000);
+}
+
+function resetBoard() {
+    [hasFlippedCard, lockBoard] = [false, false];
+    [firstCard, secondCard] = [null, null];
+}
+
+function incrementMoves() {
+    moves++;
+    memMovesDisplay.innerText = moves;
+}
+
+// Start on load
+document.addEventListener('DOMContentLoaded', initMemoryGame);
+
+// Restart Button
+if(memRestartBtn) {
+    memRestartBtn.addEventListener('click', initMemoryGame);
+}
