@@ -210,50 +210,51 @@
 
 <section id="arcade" class="fade-in">
   <div class="container-wide">
-    <h2 class="section-title" style="text-align:center; margin-bottom: 3rem;">Recruiter Arcade</h2>
+    <h2 class="section-title" style="text-align:center; margin-bottom: 2rem;">Game Room</h2>
     
-    <div class="games-row">
+    <div class="game-room-wrapper">
         
-        <div class="game-box">
-            <h3 style="margin-bottom: 1rem; color: var(--accent);">Speed Grid</h3>
+        <div class="games-row">
             
-            <p id="grid-intro" style="color:var(--text-muted); margin-bottom:1.5rem; font-size: 0.9rem;">
-                Tap numbers 1-16 in order. Fast.
-            </p>
+            <div class="game-box">
+                <h3 style="margin-bottom: 1rem; color: var(--accent);">Speed Grid</h3>
+                
+                <p id="grid-intro" style="color:var(--text-muted); margin-bottom:1.5rem; font-size: 0.9rem;">
+                    Number from 1 to 16 will be randomly layed out, tap them in order as quickly as possible
+                </p>
 
-            <div style="display: flex; justify-content: center; gap: 10px; margin-bottom: 1rem;">
-                <button id="grid-start">Start</button>
-                <button id="grid-abort">Give Up</button>
+                <div style="display: flex; justify-content: center; gap: 10px; margin-bottom: 1rem;">
+                    <button id="grid-start">Start</button>
+                    <button id="grid-abort">Give Up</button>
+                </div>
+                
+                <p id="grid-timer">Time: 0.00s</p>
+                <div id="grid-area"></div>
+                <p id="grid-result"></p>
+                
+                <div id="grid-buttons">
+                    <button id="grid-restart">Play Again</button>
+                    <button id="grid-quit">Not Now</button>
+                </div>
             </div>
-            
-            <p id="grid-timer">Time: 0.00s</p>
-            <div id="grid-area"></div>
-            <p id="grid-result"></p>
-            
-            <div id="grid-buttons">
-                <button id="grid-restart">Again</button>
-                <button id="grid-quit">Quit</button>
+
+            <div class="game-box">
+                <h3 style="margin-bottom: 1rem; color: var(--accent);">Tech Memory</h3>
+                <p style="color:var(--text-muted); margin-bottom:1.5rem; font-size: 0.9rem;">
+                    There are IT components hidden. Match the IT component pairs.
+                </p>
+
+                <div class="memory-stats" style="margin-bottom: 1rem; display: flex; justify-content: space-between; padding: 0 1rem; font-size: 0.9rem;">
+                    <span>Moves: <strong id="mem-moves">0</strong></span>
+                    <span>Matches: <strong id="mem-score">0</strong>/8</span>
+                </div>
+                
+                <div id="memory-board"></div>
+                
+                <button id="mem-restart" style="margin-top: 2rem;">Reset Memory</button>
             </div>
-        </div>
 
-        <div class="game-box">
-            <h3 style="margin-bottom: 1rem; color: var(--accent);">Tech Memory</h3>
-            <p style="color:var(--text-muted); margin-bottom:1.5rem; font-size: 0.9rem;">
-                Match the IT component pairs.
-            </p>
-
-            <div class="memory-stats" style="margin-bottom: 1rem; display: flex; justify-content: space-between; padding: 0 1rem; font-size: 0.9rem;">
-                <span>Moves: <strong id="mem-moves">0</strong></span>
-                <span>Matches: <strong id="mem-score">0</strong>/8</span>
-            </div>
-            
-            <div id="memory-board"></div>
-            
-            <button id="mem-restart" style="margin-top: 2rem;">Reset Memory</button>
-        </div>
-
-    </div>
-  </div>
+        </div> </div> </div>
 </section>
 <footer>
     © 2026 Aayush Acharya — All Rights Reserved. Created and hosted in GitHub
