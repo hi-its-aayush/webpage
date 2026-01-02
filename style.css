@@ -395,3 +395,24 @@ footer {
 #mem-restart:hover {
     background: var(--border);
 }
+/* --- DUAL GAME LAYOUT --- */
+.games-row {
+    display: grid;
+    grid-template-columns: 1fr; /* Stack on mobile */
+    gap: 2rem;
+    align-items: start; /* Aligns tops of games */
+}
+
+/* Desktop: Side-by-Side */
+@media (min-width: 900px) {
+    .games-row {
+        grid-template-columns: 1fr 1fr; /* 50% / 50% split */
+    }
+}
+
+/* Ensure game boxes fill their new columns */
+.games-row .game-box {
+    max-width: 100%; 
+    margin: 0;
+    height: 100%; /* Makes them same height if possible */
+}
