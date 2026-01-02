@@ -524,3 +524,22 @@ footer {
 .hero-title {
     min-height: 1.2em;
 }
+/* --- TYPEWRITER UPDATES --- */
+.cursor {
+    display: inline-block;
+    color: var(--accent);
+    margin-left: 2px;
+    font-weight: 700;
+    animation: blink 1s step-end infinite;
+}
+
+/* New class to stop animation */
+.cursor.typing-done {
+    animation: none; /* Stops blinking */
+    opacity: 1;      /* Keeps it visible (solid) */
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
