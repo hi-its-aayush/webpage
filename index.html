@@ -197,56 +197,58 @@
   </div>
 </section>
 
-<section id="speed-grid" class="fade-in">
-  <div class="container-wide">
-    <h2 class="section-title" style="text-align:center;">Speed Grid</h2>
-    <p id="grid-intro" style="text-align:center; color:var(--text-muted); margin-bottom:2rem;">
-      I have built a simple and fun game where you have to tap numbers in correct order in as less time as possible. Would you like to play?
-    </p>
-
-    <div class="game-box">
-      <div style="display: flex; justify-content: center; gap: 10px; margin-bottom: 1rem;">
-          <button id="grid-start">Let's Play</button>
-          <button id="grid-abort">Give Up</button> </div>
-      
-      <p id="grid-timer">Time: 0.00s</p>
-      
-      <div id="grid-area"></div>
-      <p id="grid-result"></p>
-      
-      <div id="grid-buttons">
-        <button id="grid-restart">Play Again</button>
-        <button id="grid-quit">Quit Game</button>
-      </div>
-    </div>
-  </div>
-</section>
-<section id="memory-game" class="fade-in">
-  <div class="container-wide">
-    <h2 class="section-title" style="text-align:center;">Tech Memory</h2>
-    <p style="text-align:center; color:var(--text-muted); margin-bottom:2rem;">
-        Test your RAM. Match the pairs of IT icons.
-    </p>
-
-    <div class="game-box">
-      <div class="memory-stats" style="margin-bottom: 1rem; display: flex; justify-content: space-between; padding: 0 1rem;">
-          <span>Moves: <strong id="mem-moves">0</strong></span>
-          <span>Matched: <strong id="mem-score">0</strong>/8</span>
-      </div>
-      
-      <div id="memory-board"></div>
-      
-      <button id="mem-restart" style="margin-top: 2rem;">Reset Memory</button>
-    </div>
-  </div>
-</section>
 <section id="contact" class="fade-in">
   <div class="container-wide">
     <div class="card contact-card" style="text-align: center;">
         <h2 class="section-title" style="border: none; margin-bottom: 1rem;">Let's Connect</h2>
-        
         <div id="contact-container" class="contact-links">
             <p style="color: var(--text-muted);">Loading contact info...</p>
+        </div>
+    </div>
+  </div>
+</section>
+
+<section id="arcade" class="fade-in">
+  <div class="container-wide">
+    <h2 class="section-title" style="text-align:center; margin-bottom: 3rem;">Recruiter Arcade</h2>
+    
+    <div class="games-row">
+        
+        <div class="game-box">
+            <h3 style="margin-bottom: 1rem; color: var(--accent);">Speed Grid</h3>
+            <p style="color:var(--text-muted); margin-bottom:1.5rem; font-size: 0.9rem;">
+                Tap numbers 1-16 in order. Fast.
+            </p>
+
+            <div style="display: flex; justify-content: center; gap: 10px; margin-bottom: 1rem;">
+                <button id="grid-start">Start</button>
+                <button id="grid-abort">Give Up</button>
+            </div>
+            
+            <p id="grid-timer">Time: 0.00s</p>
+            <div id="grid-area"></div>
+            <p id="grid-result"></p>
+            
+            <div id="grid-buttons">
+                <button id="grid-restart">Again</button>
+                <button id="grid-quit">Quit</button>
+            </div>
+        </div>
+
+        <div class="game-box">
+            <h3 style="margin-bottom: 1rem; color: var(--accent);">Tech Memory</h3>
+            <p style="color:var(--text-muted); margin-bottom:1.5rem; font-size: 0.9rem;">
+                Match the IT component pairs.
+            </p>
+
+            <div class="memory-stats" style="margin-bottom: 1rem; display: flex; justify-content: space-between; padding: 0 1rem; font-size: 0.9rem;">
+                <span>Moves: <strong id="mem-moves">0</strong></span>
+                <span>Matches: <strong id="mem-score">0</strong>/8</span>
+            </div>
+            
+            <div id="memory-board"></div>
+            
+            <button id="mem-restart" style="margin-top: 2rem;">Reset Memory</button>
         </div>
 
     </div>
