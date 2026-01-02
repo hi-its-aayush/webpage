@@ -303,3 +303,27 @@ footer {
         padding: 0 10px;
     }
 }
+/* --- BUTTON STYLES --- */
+
+/* Fix for the Give Up button */
+#grid-abort {
+    display: none; /* IMPORTANT: Hidden when page loads */
+    background-color: #ef4444; /* Warning Red */
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s;
+}
+
+#grid-abort:hover {
+    background-color: #dc2626;
+}
+
+/* Ensure Let's Play button matches */
+#grid-start {
+    display: inline-block; /* Visible by default */
+}
