@@ -327,3 +327,9 @@ footer {
 #grid-start {
     display: inline-block; /* Visible by default */
 }
+/* Add to bottom of style.css */
+@media (min-width: 768px) {
+    .span-2 {
+        grid-column: span 2; /* Forces the card to take full width */
+    }
+}
