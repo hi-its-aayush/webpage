@@ -165,6 +165,18 @@ section { padding: 4rem 0; }
 .card-top { margin-bottom: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 1rem; }
 .card h3 { font-size: 1.25rem; margin-bottom: 0.5rem; }
 .meta { color: var(--text-muted); font-size: 0.9rem; }
+/* --- 3-COLUMN GRID FOR EDUCATION --- */
+.bento-grid-3 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+    .bento-grid-3 {
+        grid-template-columns: repeat(3, 1fr); /* 3 Side-by-Side */
+    }
+}
 
 /* Lists & Tags */
 .card ul { list-style-type: disc; padding-left: 1.2rem; color: var(--text-muted); margin-bottom: 1.5rem; }
