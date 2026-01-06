@@ -58,6 +58,7 @@ a:hover { color: var(--accent); }
     overflow: hidden;
     position: relative;
     z-index: 2000;
+    margin-bottom: 1rem; /* Adds the empty space */
 }
 
 .ticker-track {
@@ -79,6 +80,7 @@ a:hover { color: var(--accent); }
 @keyframes scroll-seamless {
     0% { transform: translateX(0); }
     100% { transform: translateX(-25%); }
+    
 }
 
 /* --- 4. HEADER & HERO --- */
