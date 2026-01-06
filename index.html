@@ -322,20 +322,29 @@
             </div>
 
             <div class="game-box">
-                <h3 style="margin-bottom: 1rem; color: var(--accent);">Tech Memory</h3>
-                <p style="color:var(--text-muted); margin-bottom:1.5rem; font-size: 0.9rem;">
-                    There are IT components hidden. Match the IT component pairs.
-                </p>
+    <h3 style="margin-bottom: 1rem; color: var(--accent);">Tech Memory</h3>
+    <p style="color:var(--text-muted); margin-bottom:1.5rem; font-size: 0.9rem;">
+        There are IT components hidden. Match the IT component pairs.
+    </p>
 
-                <div class="memory-stats" style="margin-bottom: 1rem; display: flex; justify-content: space-between; padding: 0 1rem; font-size: 0.9rem;">
-                    <span>Moves: <strong id="mem-moves">0</strong></span>
-                    <span>Matches: <strong id="mem-score">0</strong>/8</span>
-                </div>
-                
-                <div id="memory-board"></div>
-                
-                <button id="mem-restart" style="margin-top: 2rem;">Reset Memory</button>
-            </div>
+    <div class="memory-stats" style="margin-bottom: 1rem; display: flex; justify-content: space-between; padding: 0 1rem; font-size: 0.9rem;">
+        <span>Moves: <strong id="mem-moves">0</strong></span>
+        <span>Matches: <strong id="mem-score">0</strong>/8</span>
+    </div>
+    
+    <div id="memory-board"></div>
+    
+    <div id="mem-result" style="display: none; margin-top: 2rem;">
+        <p style="color: #059669; font-weight: 700; font-size: 1.1rem; margin-bottom: 1rem;">
+            <i class="fas fa-check-circle"></i> Congratulations, you have sucessfully completed the challenge 🎉 🥳
+        </p>
+        <button id="mem-play-again" style="background:var(--accent); color:white; border:none; padding:0.8rem 2rem; border-radius:6px; font-weight:600; cursor:pointer;">
+            Play Again
+        </button>
+    </div>
+    
+    <button id="mem-restart" style="margin-top: 2rem;">Reset Memory</button>
+</div>
 
         </div> 
     </div> </div> </section>
