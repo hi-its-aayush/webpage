@@ -274,7 +274,7 @@ if(memRestartBtn) {
 }
 // --- TYPEWRITER EFFECT ---
 document.addEventListener("DOMContentLoaded", function() {
-    const text = "Hi, I'm Aayush."; 
+    const text = "Hi, I'm Aayush >_"; 
     const element = document.getElementById("typewriter-text");
     const cursor = document.querySelector(".cursor");
     
