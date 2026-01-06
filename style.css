@@ -48,17 +48,32 @@ a:hover { color: var(--accent); }
 .logo { font-weight: 700; font-size: 1.1rem; }
 .nav-links { display: flex; gap: 1.5rem; font-size: 0.9rem; align-items: center; }
 
-/* --- 3. HEADER & LAYOUT --- */
-.container-wide {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: 0 1.5rem;
+/* --- 3. TOP SCROLLING TICKER --- */
+.top-ticker {
+    background-color: #0a0a0a;
+    border-bottom: none; /* No blue line */
+    color: #ffffff;
+    font-size: 0.85rem;
+    padding: 0.6rem 0;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    z-index: 2000;
 }
 
-section { padding: 4rem 0; }
-.section-title { font-size: 1.75rem; margin-bottom: 2rem; color: var(--text-main); }
+.ticker-text {
+    display: inline-block;
+    transform: translateX(-100%); /* Start off-screen left */
+    animation: scroll-right 15s linear infinite;
+    font-family: 'Courier New', monospace;
+}
 
-/* New Header Grid */
+@keyframes scroll-right {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100vw); }
+}
+
+/* --- 4. HEADER & HERO --- */
 .main-header { padding: 4rem 0; }
 .header-grid {
     display: flex;
@@ -67,8 +82,34 @@ section { padding: 4rem 0; }
     align-items: center;
 }
 
+.container-wide {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
 .header-intro { flex: 1; }
-.header-intro h1 { font-size: 3rem; line-height: 1.1; margin-bottom: 0.5rem; letter-spacing: -1px; }
+/* Hero Title & Typewriter */
+.hero-title {
+    font-size: 3rem;
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+    letter-spacing: -1px;
+    min-height: 1.2em; /* Prevents layout jump */
+}
+
+.cursor {
+    display: inline-block;
+    color: var(--accent);
+    margin-left: 2px;
+    font-weight: 700;
+    /* Solid cursor while typing */
+}
+
+.cursor.typing-done {
+    display: none; /* Hides cursor when typing finishes */
+}
+
 .welcome-text { color: var(--accent); font-weight: 500; margin-bottom: 1.5rem; }
 .headline { font-size: 2rem; margin-top: 1.5rem; margin-bottom: 1rem; line-height: 1.2; }
 .sub-headline { color: var(--text-muted); font-size: 1.1rem; max-width: 600px; }
@@ -86,27 +127,19 @@ section { padding: 4rem 0; }
 .profile-photo {
     width: 100%;
     max-width: 400px;
-    height: auto; /* Fixes the mobile width issue */
+    height: auto;
     border-radius: var(--radius);
     border: 1px solid var(--border);
 }
 
-/* Desktop Grid Override */
-@media (min-width: 768px) {
-    .header-grid { flex-direction: row; }
-    .header-intro { text-align: left; }
-}
+/* --- 5. CARDS & LAYOUT --- */
+section { padding: 4rem 0; }
+.section-title { font-size: 1.75rem; margin-bottom: 2rem; color: var(--text-main); }
 
-/* --- 4. CARDS & EXPERIENCE --- */
 .bento-grid, .bento-grid-2 {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.5rem;
-}
-
-@media (min-width: 768px) {
-    .bento-grid { grid-template-columns: repeat(2, 1fr); } /* 2 Columns */
-    .bento-grid-2 { grid-template-columns: repeat(2, 1fr); }
 }
 
 .card {
@@ -119,17 +152,15 @@ section { padding: 4rem 0; }
 .card:hover { transform: translateY(-4px); border-color: var(--text-muted); }
 
 .card-featured { border: 1px solid var(--accent); background: var(--accent-glow); margin-bottom: 2rem; }
-
 .card-top { margin-bottom: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 1rem; }
 .card h3 { font-size: 1.25rem; margin-bottom: 0.5rem; }
 .meta { color: var(--text-muted); font-size: 0.9rem; }
 
-/* Lists in Cards */
+/* Lists & Tags */
 .card ul { list-style-type: disc; padding-left: 1.2rem; color: var(--text-muted); margin-bottom: 1.5rem; }
 .card ul li { margin-bottom: 0.5rem; }
 .clean-list { list-style: none !important; padding-left: 0 !important; }
 
-/* Skills Tags */
 .skills-tag-container h4 { font-size: 0.9rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.5rem; letter-spacing: 1px; }
 .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
 .tags span {
@@ -140,332 +171,30 @@ section { padding: 4rem 0; }
     font-size: 0.8rem;
 }
 
-/* --- 5. GAME & FOOTER --- */
-.game-box {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    padding: 2rem;
-    border-radius: var(--radius);
-    max-width: 500px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-#grid-area {
-    display: none; /* Controlled by JS */
-    margin: 1.5rem auto;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 8px;
-    max-width: 300px;
-}
-
-#grid-start, #grid-restart {
-    background: var(--accent);
-    color: white;
-    border: none;
-    padding: 0.8rem 2rem;
-    border-radius: 6px;
-    font-weight: 600;
-    cursor: pointer;
-}
-
-#grid-quit {
-    background: transparent;
-    border: 1px solid var(--border);
-    color: var(--text-muted);
-    padding: 0.8rem 2rem;
-    border-radius: 6px;
-    cursor: pointer;
-}
-
-/* UPDATED: Hides timer and extra buttons by default */
-#grid-timer {
-  margin-top: 1rem;
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--text-main);
-  display: none; 
-}
-
-#grid-buttons {
-  margin-top: 1.5rem;
-  display: none; 
-  gap: 10px;
-  justify-content: center;
-}
-
-footer {
-    text-align: center;
-    padding: 3rem 0;
-    color: var(--text-muted);
-    font-size: 0.9rem;
-    border-top: 1px solid var(--border);
-}
-
-/* Animations */
-.fade-in { animation: fadeIn 0.8s ease forwards; opacity: 0; transform: translateY(10px); }
-@keyframes fadeIn { to { opacity: 1; transform: translateY(0); } }
-
-
-
-/* --- SCROLL TO TOP BUTTON --- */
-.btn-top {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background-color: var(--accent); 
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    font-size: 1.5rem;
-    cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    opacity: 0; /* Hidden by default */
-    visibility: hidden;
-    transition: all 0.3s ease;
-    z-index: 1000;
-}
-
-.btn-top.show {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-.btn-top:hover {
-    background-color: var(--text-main);
-    color: var(--bg-main);
-    transform: translateY(-5px);
-}
-/* --- POLISHED MOBILE LAYOUT --- */
-@media (max-width: 768px) {
-    /* 1. Tighter Navigation */
-    .nav-content {
-        flex-direction: column;
-        gap: 0.8rem;
-        padding: 0.8rem 1rem;
-    }
-    
-    .nav-links {
-        display: flex; 
-        flex-wrap: wrap; /* Allows links to sit side-by-side */
-        justify-content: center;
-        gap: 15px; /* Nice spacing between links */
-        width: 100%;
-    }
-    
-    /* 2. Better Header Sizing */
-    .header-intro {
-        text-align: center;
-    }
-    
-    .header-intro h1 {
-        font-size: 2.2rem; /* Big, but fits screen */
-        line-height: 1.2;
-    }
-    
-    .headline {
-        font-size: 1.4rem;
-        margin-top: 1rem;
-    }
-    
-    /* 3. Fix Profile Photo */
-    .profile-photo {
-        max-width: 220px; /* Perfect size for mobile */
-        margin: 0 auto 1.5rem auto;
-        display: block;
-    }
-
-    /* 4. Fix "Technical Support" text cutting off */
-    .sub-headline {
-        font-size: 1rem;
-        line-height: 1.5;
-        padding: 0 10px;
-    }
-}
-/* --- BUTTON STYLES --- */
-
-/* Fix for the Give Up button */
-#grid-abort {
-    display: none; /* IMPORTANT: Hidden when page loads */
-    background-color: #ef4444; /* Warning Red */
-    color: white;
-    border: none;
-    padding: 0.8rem 2rem;
-    border-radius: 6px;
-    font-weight: 600;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.2s;
-}
-
-#grid-abort:hover {
-    background-color: #dc2626;
-}
-
-/* Ensure Let's Play button matches */
-#grid-start {
-    display: inline-block; /* Visible by default */
-}
-/* Add to bottom of style.css */
-@media (min-width: 768px) {
-    .span-2 {
-        grid-column: span 2; /* Forces the card to take full width */
-    }
-}
-/* --- MEMORY GAME --- */
-#memory-board {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    max-width: 400px;
-    margin: 0 auto;
-    perspective: 1000px; /* Essential for 3D flip */
-}
-
-.mem-card {
-    background-color: transparent;
-    height: 80px;
-    cursor: pointer;
-    position: relative;
-    transform-style: preserve-3d;
-    transition: transform 0.5s;
-}
-
-.mem-card.flip {
-    transform: rotateY(180deg);
-}
-
-.mem-front, .mem-back {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-    backface-visibility: hidden; /* Hides the back when flipped */
-    border: 1px solid var(--border);
-}
-
-/* The "Hidden" side (Question Mark) */
-.mem-front {
-    background: #262626;
-    color: var(--text-muted);
-}
-
-/* The "Revealed" side (Icon) */
-.mem-back {
-    background: var(--accent);
-    color: white;
-    transform: rotateY(180deg);
-}
-
-#mem-restart {
-    background: var(--bg-hover);
-    color: var(--text-main);
-    border: 1px solid var(--border);
-    padding: 0.8rem 2rem;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: 600;
-}
-
-#mem-restart:hover {
-    background: var(--border);
-}
-/* --- DUAL GAME LAYOUT --- */
-.games-row {
-    display: grid;
-    grid-template-columns: 1fr; /* Stack on mobile */
-    gap: 2rem;
-    align-items: start; /* Aligns tops of games */
-}
-
-/* Desktop: Side-by-Side */
-@media (min-width: 900px) {
-    .games-row {
-        grid-template-columns: 1fr 1fr; /* 50% / 50% split */
-    }
-}
-
-/* Ensure game boxes fill their new columns */
-.games-row .game-box {
-    max-width: 100%; 
-    margin: 0;
-    height: 100%; /* Makes them same height if possible */
-}
-/* --- THE BIG BLUE BOX --- */
-.game-room-wrapper {
-    background: rgba(59, 130, 246, 0.08); /* Subtle Blue Background */
-    border: 2px solid var(--accent);       /* Solid Blue Border */
-    border-radius: 16px;
-    padding: 2rem;
-    margin-top: 1rem;
-    box-shadow: 0 0 20px rgba(59, 130, 246, 0.1); /* Blue Glow */
-}
-
-/* Make inner cards darker so they pop against the blue */
-.game-room-wrapper .game-box {
-    background: rgba(0, 0, 0, 0.3); 
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-/* --- COMPACT GAME ROOM ADJUSTMENTS --- */
-
-/* 1. Constrain the overall width so it doesn't look huge */
-.game-room-wrapper {
-    max-width: 850px; /* Limits the blue box width */
-    margin-left: auto;
-    margin-right: auto;
-    padding: 1.5rem; /* Less padding inside the blue box */
-}
-
-/* 2. Shrink the game cards inside */
-.game-room-wrapper .game-box {
-    padding: 1.2rem;   /* Reduced from 2rem */
-    min-height: auto;  /* Remove forced height if set */
-}
-
-/* 3. Make the game titles slightly smaller */
-.game-room-wrapper h3 {
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
-}
-
-/* 4. Tighter spacing for the game text */
-.game-room-wrapper p {
-    margin-bottom: 1rem;
-    font-size: 0.85rem;
-}
-/* --- CERTIFICATE LINKS (Updated to Pill Button Style) --- */
+/* --- 6. CERTIFICATES --- */
+/* Pill Buttons */
 .cert-link {
     display: inline-block;
-    background-color: var(--accent); /* Solid Blue Background */
-    color: #ffffff !important;       /* White Text */
-    padding: 0.5rem 1.2rem;          /* Padding for button shape */
-    border-radius: 50px;             /* Full rounded "Pill" corners */
+    background-color: var(--accent);
+    color: #ffffff !important;
+    padding: 0.5rem 1.2rem;
+    border-radius: 50px;
     font-weight: 600;
     text-decoration: none;
-    font-size: 0.85rem;              /* Text size */
+    font-size: 0.85rem;
     margin-top: 0.6rem;
     border: 1px solid var(--accent);
     transition: all 0.2s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
-
 .cert-link:hover {
-    background-color: transparent;   /* Hollow on hover */
-    color: var(--accent) !important; /* Blue text on hover */
-    transform: translateY(-2px);     /* Slight lift effect */
+    background-color: transparent;
+    color: var(--accent) !important;
+    transform: translateY(-2px);
 }
+.cert-link i { margin-right: 6px; }
 
-.cert-link i {
-    margin-right: 6px;
-}
-/* --- MASTER CERTIFICATE BUTTON --- */
+/* Master Button (Bottom) */
 .cert-master-btn {
     display: flex;
     align-items: center;
@@ -473,7 +202,7 @@ footer {
     gap: 10px;
     width: 100%;
     padding: 0.8rem;
-    background-color: rgba(59, 130, 246, 0.1); /* Light Blue Tint */
+    background-color: rgba(59, 130, 246, 0.1);
     border: 1px solid var(--accent);
     color: var(--accent);
     border-radius: 8px;
@@ -481,54 +210,116 @@ footer {
     text-decoration: none;
     transition: all 0.2s ease;
 }
-
 .cert-master-btn:hover {
     background-color: var(--accent);
     color: white;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2); /* Blue Glow */
-}
-/* --- TYPEWRITER CURSOR --- */
-
-/* 1. Keeps the layout stable so text doesn't jump */
-.hero-title {
-    min-height: 1.2em;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
 }
 
-/* 2. The Cursor Style */
-.cursor {
-    display: inline-block;
-    color: var(--accent);
-    margin-left: 2px;
-    font-weight: 700;
-    /* I removed 'animation: blink...' so it stays SOLID and visible while typing */
+/* --- 7. GAME ROOM --- */
+/* The Blue Box Wrapper */
+.game-room-wrapper {
+    background: rgba(59, 130, 246, 0.08);
+    border: 2px solid var(--accent);
+    border-radius: 16px;
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.1);
+    max-width: 850px;
+    margin: 1rem auto;
+    padding: 1.5rem;
 }
 
-/* 3. Logic to hide it when done */
-.cursor.typing-done {
-    display: none;
-}
-/* --- TOP SCROLLING TICKER --- */
-.top-ticker {
-    background-color: #0a0a0a;        /* Very dark background to blend in */
-    color: #ffffff;
-    font-size: 0.85rem;
-    padding: 0.6rem 0;
-    overflow: hidden;                 /* Hides text when it goes off screen */
-    white-space: nowrap;              /* Forces text to stay on one line */
-    position: relative;
-    z-index: 2000;                    /* Ensures it sits on top of everything */
+/* Games Row Layout */
+.games-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
 }
 
-.ticker-text {
-    display: inline-block;
-    padding-left: 100%;               /* Starts completely off-screen right */
-    animation: scroll 15s linear infinite; /* 15s = Speed (Lower is faster) */
-    font-family: 'Courier New', monospace; /* Code-like font */
+/* Individual Game Cards */
+.game-box {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1.2rem;
+    border-radius: var(--radius);
+    text-align: center;
+    height: 100%;
 }
 
-/* The Animation Logic: Move from Left (-100%) to Right (100vw) */
-@keyframes scroll-right {
-    0% { transform: translateX(-100%); }
-    100% { transform: translateX(100vw); } /* 100vw = Full screen width */
+.game-room-wrapper h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+.game-room-wrapper p { margin-bottom: 1rem; font-size: 0.85rem; }
+
+/* Game Buttons */
+#grid-start, #grid-restart {
+    background: var(--accent); color: white; border: none; padding: 0.8rem 2rem;
+    border-radius: 6px; font-weight: 600; cursor: pointer; display: inline-block;
+}
+#grid-quit {
+    background: transparent; border: 1px solid var(--border); color: var(--text-muted);
+    padding: 0.8rem 2rem; border-radius: 6px; cursor: pointer;
+}
+#grid-abort {
+    display: none; background-color: #ef4444; color: white; border: none;
+    padding: 0.8rem 2rem; border-radius: 6px; font-weight: 600; cursor: pointer;
+}
+#grid-abort:hover { background-color: #dc2626; }
+
+/* Speed Grid Internals */
+#grid-area {
+    display: none; margin: 1.5rem auto; grid-template-columns: repeat(4, 1fr);
+    gap: 8px; max-width: 300px;
+}
+#grid-timer { margin-top: 1rem; font-size: 1.1rem; font-weight: 600; display: none; }
+#grid-buttons { margin-top: 1.5rem; display: none; gap: 10px; justify-content: center; }
+
+/* Memory Game Internals */
+#memory-board {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;
+    max-width: 400px; margin: 0 auto; perspective: 1000px;
+}
+.mem-card {
+    background-color: transparent; height: 80px; cursor: pointer;
+    position: relative; transform-style: preserve-3d; transition: transform 0.5s;
+}
+.mem-card.flip { transform: rotateY(180deg); }
+.mem-front, .mem-back {
+    width: 100%; height: 100%; position: absolute; border-radius: 8px;
+    display: flex; align-items: center; justify-content: center; font-size: 2rem;
+    backface-visibility: hidden; border: 1px solid var(--border);
+}
+.mem-front { background: #262626; color: var(--text-muted); }
+.mem-back { background: var(--accent); color: white; transform: rotateY(180deg); }
+
+#mem-restart {
+    background: var(--bg-hover); color: var(--text-main); border: 1px solid var(--border);
+    padding: 0.8rem 2rem; border-radius: 6px; cursor: pointer; font-weight: 600;
+}
+#mem-restart:hover { background: var(--border); }
+
+/* --- 8. FOOTER & UTILS --- */
+footer {
+    text-align: center; padding: 3rem 0; color: var(--text-muted);
+    font-size: 0.9rem; border-top: 1px solid var(--border);
+}
+
+.fade-in { animation: fadeIn 0.8s ease forwards; opacity: 0; transform: translateY(10px); }
+@keyframes fadeIn { to { opacity: 1; transform: translateY(0); } }
+
+/* --- 9. MEDIA QUERIES (DESKTOP & MOBILE) --- */
+@media (min-width: 768px) {
+    /* Desktop Layouts */
+    .header-grid { flex-direction: row; }
+    .header-intro { text-align: left; }
+    .bento-grid, .bento-grid-2 { grid-template-columns: repeat(2, 1fr); }
+    .span-2 { grid-column: span 2; }
+    .games-row { grid-template-columns: 1fr 1fr; } /* Side by side games */
+}
+
+@media (max-width: 768px) {
+    /* Mobile Adjustments */
+    .nav-content { flex-direction: column; gap: 0.8rem; padding: 0.8rem 1rem; }
+    .nav-links { flex-wrap: wrap; justify-content: center; gap: 15px; width: 100%; }
+    .header-intro { text-align: center; }
+    .header-intro h1 { font-size: 2.2rem; }
+    .profile-photo { max-width: 220px; margin: 0 auto 1.5rem auto; display: block; }
 }
