@@ -489,38 +489,22 @@ footer {
     box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2); /* Blue Glow */
 }
 /* --- TYPEWRITER CURSOR --- */
-.cursor {
-    display: inline-block;
-    color: var(--accent); /* Blue cursor */
-    margin-left: 5px;
-    animation: blink 1s infinite;
-    font-weight: 400;
-}
 
-@keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
-}
-
-/* Optional: Ensure the H1 keeps its height so the page doesn't jump */
+/* 1. Keeps the layout stable so text doesn't jump */
 .hero-title {
     min-height: 1.2em;
 }
-/* --- TYPEWRITER UPDATES --- */
+
+/* 2. The Cursor Style */
 .cursor {
     display: inline-block;
     color: var(--accent);
     margin-left: 2px;
     font-weight: 700;
-    animation: blink 1s step-end infinite;
+    /* I removed 'animation: blink...' so it stays SOLID and visible while typing */
 }
 
-/* New class to stop animation */
+/* 3. Logic to hide it when done */
 .cursor.typing-done {
-    display: none; /* Stops blinking */
-}
-
-@keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
+    display: none;
 }
