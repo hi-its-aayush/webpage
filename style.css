@@ -64,7 +64,7 @@ a:hover { color: var(--accent); }
 .ticker-track {
     display: flex;
     width: max-content; /* Forces text to stay in one long line */
-    animation: scroll-seamless 20s linear infinite; /* Adjust '20s' to make it faster/slower */
+    animation: scroll-seamless 25s linear infinite; /* Adjust '20s' to make it faster/slower */
 }
 
 .ticker-track span {
