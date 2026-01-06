@@ -193,8 +193,9 @@ const memoryBoard = document.getElementById('memory-board');
 const memMovesDisplay = document.getElementById('mem-moves');
 const memScoreDisplay = document.getElementById('mem-score');
 const memRestartBtn = document.getElementById('mem-restart');
-const memResult = document.getElementById('mem-result');     // NEW
-const memPlayAgain = document.getElementById('mem-play-again'); // NEW
+const memResult = document.getElementById('mem-result');
+const memPlayAgain = document.getElementById('mem-play-again');
+const memInstructions = document.getElementById('mem-instructions'); // NEW
 
 const icons = [
     'fa-wifi', 'fa-database', 'fa-server', 'fa-bug', 
@@ -208,7 +209,6 @@ let firstCard, secondCard;
 let moves = 0;
 let matches = 0;
 
-// Listeners
 if (memRestartBtn) memRestartBtn.addEventListener('click', initMemoryGame);
 if (memPlayAgain) memPlayAgain.addEventListener('click', initMemoryGame);
 
@@ -217,16 +217,16 @@ function initMemoryGame() {
     
     // UI Reset
     memoryBoard.innerHTML = '';
-    memoryBoard.style.display = 'grid'; // Show board
-    if (memRestartBtn) memRestartBtn.style.display = 'inline-block'; // Show reset
-    if (memResult) memResult.style.display = 'none'; // Hide result
+    memoryBoard.style.display = 'grid'; 
+    if (memRestartBtn) memRestartBtn.style.display = 'inline-block'; 
+    if (memResult) memResult.style.display = 'none'; 
+    if (memInstructions) memInstructions.style.display = 'block'; // Show instructions again
     
     moves = 0;
     matches = 0;
     if(memMovesDisplay) memMovesDisplay.innerText = moves;
     if(memScoreDisplay) memScoreDisplay.innerText = matches;
     
-    // Create pairs and shuffle
     let deck = [...icons, ...icons];
     deck.sort(() => 0.5 - Math.random());
 
@@ -278,11 +278,10 @@ function disableCards() {
     // WIN CONDITION
     if(matches === 8) {
         setTimeout(() => {
-            // Hide board and reset button
             memoryBoard.style.display = 'none';
             if (memRestartBtn) memRestartBtn.style.display = 'none';
+            if (memInstructions) memInstructions.style.display = 'none'; // Hide instructions
             
-            // Show Victory Message
             if (memResult) memResult.style.display = 'block';
         }, 500);
     }
