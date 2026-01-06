@@ -207,24 +207,6 @@ footer {
 @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } }
 
 
-/* --- CV BUTTON --- */
-.btn-cv {
-    display: inline-block;
-    background-color: var(--accent); /* Uses your blue accent color */
-    color: #ffffff;
-    padding: 0.8rem 2.5rem;
-    border-radius: 50px; /* Rounded pill shape */
-    font-weight: 600;
-    margin-top: 1rem;
-    border: 1px solid var(--accent);
-    transition: all 0.2s ease;
-}
-
-.btn-cv:hover {
-    background-color: transparent;
-    color: var(--accent);
-    transform: translateY(-2px);
-}
 
 /* --- SCROLL TO TOP BUTTON --- */
 .btn-top {
