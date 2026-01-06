@@ -48,29 +48,37 @@ a:hover { color: var(--accent); }
 .logo { font-weight: 700; font-size: 1.1rem; }
 .nav-links { display: flex; gap: 1.5rem; font-size: 0.9rem; align-items: center; }
 
-/* --- 3. TOP SCROLLING TICKER --- */
+/* --- 3. TOP SCROLLING TICKER (Seamless Loop) --- */
 .top-ticker {
     background-color: #0a0a0a;
-    border-bottom: none; /* No blue line */
+    border-bottom: none;
     color: #ffffff;
     font-size: 0.85rem;
     padding: 0.6rem 0;
     overflow: hidden;
-    white-space: nowrap;
     position: relative;
     z-index: 2000;
 }
 
-.ticker-text {
-    display: inline-block;
-    transform: translateX(-100%); /* Start off-screen left */
-    animation: scroll-right 15s linear infinite;
+.ticker-track {
+    display: flex;
+    width: max-content; /* Forces text to stay in one long line */
+    animation: scroll-seamless 20s linear infinite; /* Adjust '20s' to make it faster/slower */
+}
+
+.ticker-track span {
+    padding-right: 4rem; /* The gap between the repeated sentences */
+    white-space: nowrap;
     font-family: 'Courier New', monospace;
 }
 
-@keyframes scroll-right {
-    0% { transform: translateX(-100%); }
-    100% { transform: translateX(100vw); }
+/* THE SEAMLESS LOGIC:
+   We have 4 identical items. We move the track left by exactly 25% (width of 1 item).
+   When it hits -25%, it snaps back to 0 instantly.
+   Because Item 2 is identical to Item 1, the snap is invisible. */
+@keyframes scroll-seamless {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-25%); }
 }
 
 /* --- 4. HEADER & HERO --- */
