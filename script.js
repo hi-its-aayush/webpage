@@ -193,6 +193,8 @@ const memoryBoard = document.getElementById('memory-board');
 const memMovesDisplay = document.getElementById('mem-moves');
 const memScoreDisplay = document.getElementById('mem-score');
 const memRestartBtn = document.getElementById('mem-restart');
+const memResult = document.getElementById('mem-result');     // NEW
+const memPlayAgain = document.getElementById('mem-play-again'); // NEW
 
 const icons = [
     'fa-wifi', 'fa-database', 'fa-server', 'fa-bug', 
@@ -206,14 +208,19 @@ let firstCard, secondCard;
 let moves = 0;
 let matches = 0;
 
-if (memRestartBtn) {
-    memRestartBtn.addEventListener('click', initMemoryGame);
-}
+// Listeners
+if (memRestartBtn) memRestartBtn.addEventListener('click', initMemoryGame);
+if (memPlayAgain) memPlayAgain.addEventListener('click', initMemoryGame);
 
 function initMemoryGame() {
     if (!memoryBoard) return;
     
+    // UI Reset
     memoryBoard.innerHTML = '';
+    memoryBoard.style.display = 'grid'; // Show board
+    if (memRestartBtn) memRestartBtn.style.display = 'inline-block'; // Show reset
+    if (memResult) memResult.style.display = 'none'; // Hide result
+    
     moves = 0;
     matches = 0;
     if(memMovesDisplay) memMovesDisplay.innerText = moves;
@@ -268,10 +275,16 @@ function disableCards() {
     matches++;
     if(memScoreDisplay) memScoreDisplay.innerText = matches;
     
-    // Optional Win Message
+    // WIN CONDITION
     if(matches === 8) {
-        // You can uncomment the line below if you want an alert
-        // setTimeout(() => alert("System Restored! RAM Verified."), 500);
+        setTimeout(() => {
+            // Hide board and reset button
+            memoryBoard.style.display = 'none';
+            if (memRestartBtn) memRestartBtn.style.display = 'none';
+            
+            // Show Victory Message
+            if (memResult) memResult.style.display = 'block';
+        }, 500);
     }
 
     resetBoard();
