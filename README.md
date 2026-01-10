@@ -1,7 +1,7 @@
 # Portfolio Website
 
 A personal portfolio website designed for IT Support and System Administration.
-Built with semantic HTML5, modern CSS Grid/Flexbox, and vanilla JavaScript.
+Built with  HTML, modern CSS Grid/Flexbox, and vanilla JavaScript.
 
 ### Features
 * **Performance:** Zero frameworks, 100/100 Lighthouse score.
@@ -10,4 +10,4 @@ Built with semantic HTML5, modern CSS Grid/Flexbox, and vanilla JavaScript.
 * **Interactive:** Custom DOM-manipulation logic test (Speed Grid).
 
 ### Live Site
-[aayushacharya.com.au]
+aayushacharya.com.au
