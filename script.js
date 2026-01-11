@@ -54,12 +54,14 @@ function initContactInfo() {
         <p style="margin-bottom: 0.5rem;">
             Phone: <strong>${phone}</strong>
         </p>
-        <p style="margin-bottom: 1.5rem;">
+        <p style="margin-bottom: 0.5rem;">
             LinkedIn: <a href="https://linkedin.com/in/aayushacharya" target="_blank">linkedin.com/in/aayushacharya</a>
+        </p>
+        <p style="margin-bottom: 1.5rem;">
+            GitHub: <a href="https://github.com/hi-its-aayush" target="_blank">github.com/hi-its-aayush</a>
         </p>
     `;
 }
-
 /* =========================================
    4. GAME 1: SPEED GRID
    ========================================= */
