@@ -4,18 +4,17 @@
 document.addEventListener("DOMContentLoaded", function() {
     initTypewriter();
     initContactInfo();
-    initMemoryGame(); // Start Memory Game logic
+    initMemoryGame();
 });
 
 /* =========================================
    2. TYPEWRITER EFFECT (Header)
    ========================================= */
 function initTypewriter() {
-    const text = "Hi, I'm Aayush."; // The text to type
+    const text = "Hi, I'm Aayush.";
     const element = document.getElementById("typewriter-text");
     const cursor = document.querySelector(".cursor");
     
-    // Safety check
     if (!element || !cursor) return;
     
     let index = 0;
@@ -24,14 +23,12 @@ function initTypewriter() {
         if (index < text.length) {
             element.textContent += text.charAt(index);
             index++;
-            setTimeout(type, 100); // Typing speed
+            setTimeout(type, 100);
         } else {
-            // Finished: Add class to hide the cursor (as defined in CSS)
             cursor.classList.add("typing-done");
         }
     }
     
-    // Start after a slight delay
     setTimeout(type, 500);
 }
 
@@ -62,6 +59,7 @@ function initContactInfo() {
         </p>
     `;
 }
+
 /* =========================================
    4. GAME 1: SPEED GRID
    ========================================= */
@@ -79,12 +77,10 @@ let nextNumber = 1;
 let startTime;
 let timerInterval;
 
-// Only add listeners if elements exist (prevents errors on other pages)
 if (startBtn) {
     startBtn.addEventListener("click", startGridGame);
     restartBtn.addEventListener("click", startGridGame);
     
-    // GIVE UP BUTTON
     abortBtn.addEventListener('click', () => {
         clearInterval(timerInterval);
         gridArea.innerHTML = "";
@@ -95,7 +91,6 @@ if (startBtn) {
         buttonsRow.style.display = "flex";
     });
 
-    // QUIT BUTTON
     quitBtn.addEventListener("click", () => {
         gridArea.style.display = "none";
         timerDisplay.style.display = "none";
@@ -111,7 +106,6 @@ function startGridGame() {
     nextNumber = 1;
     resultDisplay.textContent = "";
     
-    // UI Updates
     buttonsRow.style.display = "none";
     startBtn.style.display = "none";
     introMessage.style.display = "none";
@@ -119,12 +113,10 @@ function startGridGame() {
     gridArea.style.display = "grid";
     timerDisplay.style.display = "block";
 
-    // Timer Start
     timerDisplay.textContent = "Time: 0.00s";
     startTime = Date.now();
     timerInterval = setInterval(updateGridTimer, 10);
 
-    // Generate Numbers
     const numbers = Array.from({ length: 16 }, (_, i) => i + 1)
         .sort(() => Math.random() - 0.5);
 
@@ -134,7 +126,6 @@ function startGridGame() {
         const cell = document.createElement("div");
         cell.textContent = num;
         
-        // Inline Styles for Grid Cells
         cell.style.padding = "1rem";
         cell.style.background = "#262626"; 
         cell.style.color = "#ffffff";      
@@ -153,16 +144,14 @@ function startGridGame() {
 
 function handleGridClick(num, cell) {
     if (num === nextNumber) {
-        // Correct Tap
-        cell.style.background = "#059669"; // Green
+        cell.style.background = "#059669";
         cell.style.color = "#ffffff";
         cell.style.pointerEvents = "none";
         nextNumber++;
 
         if (nextNumber > 16) endGridGame();
     } else {
-        // Wrong Tap (Shake effect)
-        cell.style.background = "#dc2626"; // Red
+        cell.style.background = "#dc2626";
         cell.style.transform = "translateX(5px)";
         setTimeout(() => {
             cell.style.background = "#262626"; 
@@ -197,7 +186,7 @@ const memScoreDisplay = document.getElementById('mem-score');
 const memRestartBtn = document.getElementById('mem-restart');
 const memResult = document.getElementById('mem-result');
 const memPlayAgain = document.getElementById('mem-play-again');
-const memInstructions = document.getElementById('mem-instructions'); // NEW
+const memInstructions = document.getElementById('mem-instructions');
 
 const icons = [
     'fa-wifi', 'fa-database', 'fa-server', 'fa-bug', 
@@ -217,12 +206,11 @@ if (memPlayAgain) memPlayAgain.addEventListener('click', initMemoryGame);
 function initMemoryGame() {
     if (!memoryBoard) return;
     
-    // UI Reset
     memoryBoard.innerHTML = '';
     memoryBoard.style.display = 'grid'; 
     if (memRestartBtn) memRestartBtn.style.display = 'inline-block'; 
     if (memResult) memResult.style.display = 'none'; 
-    if (memInstructions) memInstructions.style.display = 'block'; // Show instructions again
+    if (memInstructions) memInstructions.style.display = 'block';
     
     moves = 0;
     matches = 0;
@@ -277,13 +265,11 @@ function disableCards() {
     matches++;
     if(memScoreDisplay) memScoreDisplay.innerText = matches;
     
-    // WIN CONDITION
     if(matches === 8) {
         setTimeout(() => {
             memoryBoard.style.display = 'none';
             if (memRestartBtn) memRestartBtn.style.display = 'none';
-            if (memInstructions) memInstructions.style.display = 'none'; // Hide instructions
-            
+            if (memInstructions) memInstructions.style.display = 'none';
             if (memResult) memResult.style.display = 'block';
         }, 500);
     }
