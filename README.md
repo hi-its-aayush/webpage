@@ -57,23 +57,7 @@ webpage/
 | `dev` | Active development — all changes land here first |
 | `feature/*` | Short-lived branches for new sections or features |
 
-### Workflow
 
-```bash
-# Start new work off dev
-git checkout dev
-git checkout -b feature/your-feature-name
-
-# When done, merge back to dev
-git checkout dev
-git merge --no-ff feature/your-feature-name
-git push origin dev
-
-# When ready to go live
-git checkout main
-git merge --no-ff dev
-git push origin main
-```
 
 ---
 
@@ -97,13 +81,6 @@ git push origin main
 - CompTIA A+ Core 1
 - Google IT Support Professional Certificate
 - ServiceNow IT Automation & AI-Powered Workflows
-
----
-
-## 📬 Contact
-
-**[linkedin.com/in/aayushacharya](https://linkedin.com/in/aayushacharya)**  
-**[github.com/hi-its-aayush](https://github.com/hi-its-aayush)**
 
 ---
 
