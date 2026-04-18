@@ -1,51 +1,109 @@
-# Portfolio Website
+# 🖥️ aayushacharya.com.au
 
-A personal portfolio website designed for IT Support and System Administration.
-Built with HTML, modern CSS Grid/Flexbox, and vanilla JavaScript.
+> Personal portfolio for **Aayush Acharya** — AV & Technical Support Analyst at PwC Sydney.  
+> Built with zero frameworks. Just HTML, CSS, and JavaScript — the way it should be.
 
-## Features
-* **Performance:** Zero frameworks, 100/100 Lighthouse score.
-* **Design:** Premium Dark Mode using CSS Variables.
-* **Responsiveness:** Mobile-first architecture.
-* **Interactive:** Custom DOM-manipulation logic test (Speed Grid).
+![Status](https://img.shields.io/badge/status-live-brightgreen?style=flat-square)
+![Built With](https://img.shields.io/badge/built%20with-HTML%20%7C%20CSS%20%7C%20JS-blue?style=flat-square)
+![Hosted On](https://img.shields.io/badge/hosted%20on-GitHub%20Pages-181717?style=flat-square&logo=github)
+![Lighthouse](https://img.shields.io/badge/Lighthouse-100%2F100-orange?style=flat-square)
 
-## Live Site
-[aayushacharya.com.au](https://aayushacharya.com.au)
+---
 
-## Project Structure
+## 🔗 Live Site
+
+**[aayushacharya.com.au](https://aayushacharya.com.au)**
+
+---
+
+## ✨ Features
+
+| Feature | Details |
+|---|---|
+| ⚡ Performance | Zero frameworks — pure HTML/CSS/JS |
+| 🌑 Dark Mode | Full dark theme via CSS custom properties |
+| 📱 Responsive | Mobile-first, works on all screen sizes |
+| 🔒 Anti-bot | Contact info injected via JS to block scrapers |
+| 🎮 Game Room | Speed Grid & Tech Memory — playable in-browser |
+| 🚀 Deployment | GitHub Pages with custom domain + HTTPS |
+
+---
+
+## 🗂️ Project Structure
+
 ```
-/
+webpage/
 ├── assets/
-│   ├── images/     # Profile photo, favicon
-│   └── pdfs/       # Certification PDFs
+│   ├── images/          # Profile photo, favicon
+│   └── pdfs/            # Certification PDFs
 ├── css/
-│   └── style.css
+│   └── style.css        # All styles, variables, responsive rules
 ├── js/
-│   └── script.js
-├── index.html
+│   └── script.js        # Typewriter, contact injection, games
+├── index.html           # Single-page portfolio
+├── CNAME                # Custom domain config for GitHub Pages
 ├── .gitignore
 └── README.md
 ```
 
-## Branch Strategy
+---
+
+## 🌿 Branch Strategy
+
 | Branch | Purpose |
-|--------|---------|
-| `main` | Production — live site, deploy only via PR |
-| `dev`  | Active development, all changes land here first |
+|---|---|
+| `main` | Production — live site. Merge here only when ready to deploy |
+| `dev` | Active development — all changes land here first |
 | `feature/*` | Short-lived branches for new sections or features |
 
-## Workflow
+### Workflow
+
 ```bash
-# Start new work
+# Start new work off dev
 git checkout dev
 git checkout -b feature/your-feature-name
 
-# Finish and merge to dev
+# When done, merge back to dev
 git checkout dev
 git merge --no-ff feature/your-feature-name
+git push origin dev
 
-# Deploy to production
+# When ready to go live
 git checkout main
 git merge --no-ff dev
 git push origin main
 ```
+
+---
+
+## 🛠️ Tech Stack
+
+- **Structure** — Semantic HTML5
+- **Styling** — CSS Grid, Flexbox, CSS Custom Properties
+- **Logic** — Vanilla JavaScript (ES6+)
+- **Icons** — Font Awesome 6
+- **Fonts** — Google Fonts (Inter)
+- **Hosting** — GitHub Pages
+- **Domain** — Custom `.com.au` with DNS via Namecheap/Cloudflare
+
+---
+
+## 📜 Certifications Featured
+
+- Microsoft Cloud Support Associate
+- Microsoft Endpoint Administrator (MD-102)
+- Cisco CCST IT Support (100-140)
+- CompTIA A+ Core 1
+- Google IT Support Professional Certificate
+- ServiceNow IT Automation & AI-Powered Workflows
+
+---
+
+## 📬 Contact
+
+**[linkedin.com/in/aayushacharya](https://linkedin.com/in/aayushacharya)**  
+**[github.com/hi-its-aayush](https://github.com/hi-its-aayush)**
+
+---
+
+*© 2026 Aayush Acharya — All Rights Reserved.*
