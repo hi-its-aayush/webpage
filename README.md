@@ -1,7 +1,8 @@
-# 🖥️ aayushacharya.com.au
+<p align="center">
+  <img src="assets/images/banner.svg" alt="Aayush Acharya" width="900"/>
+</p>
 
-> Personal portfolio for **Aayush Acharya** — AV & Technical Support Analyst at PwC Sydney.  
-> Built with zero frameworks. Just HTML, CSS, and JavaScript — the way it should be.
+---
 
 ![Status](https://img.shields.io/badge/status-live-brightgreen?style=flat-square)
 ![Built With](https://img.shields.io/badge/built%20with-HTML%20%7C%20CSS%20%7C%20JS-blue?style=flat-square)
@@ -34,7 +35,7 @@
 ```
 webpage/
 ├── assets/
-│   ├── images/          # Profile photo, favicon
+│   ├── images/          # Profile photo, favicon, banner
 │   └── pdfs/            # Certification PDFs
 ├── css/
 │   └── style.css        # All styles, variables, responsive rules
@@ -84,7 +85,7 @@ git push origin main
 - **Icons** — Font Awesome 6
 - **Fonts** — Google Fonts (Inter)
 - **Hosting** — GitHub Pages
-- **Domain** — Custom `.com.au` with DNS via Namecheap/Cloudflare
+- **Domain** — Custom `.com.au` with DNS
 
 ---
 
