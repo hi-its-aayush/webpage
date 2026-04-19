@@ -49,17 +49,6 @@ webpage/
 
 ---
 
-## 🌿 Branch Strategy
-
-| Branch | Purpose |
-|---|---|
-| `main` | Production — live site. Merge here only when ready to deploy |
-| `dev` | Active development — all changes land here first |
-| `feature/*` | Short-lived branches for new sections or features |
-
-
-
----
 
 ## 🛠️ Tech Stack
 
