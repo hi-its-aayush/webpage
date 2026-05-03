@@ -8,6 +8,49 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link href="css/style.css" rel="stylesheet">
+
+  <style>
+    /* Equal-height experience cards */
+    .experience-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      align-items: start;
+    }
+    @media (max-width: 768px) {
+      .experience-grid { grid-template-columns: 1fr; }
+    }
+
+    /* Skills & certs cards match height */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      align-items: stretch;
+    }
+    .skills-grid .card {
+      display: flex;
+      flex-direction: column;
+    }
+    .skills-grid .card ul.clean-list {
+      flex: 1;
+    }
+    @media (max-width: 768px) {
+      .skills-grid { grid-template-columns: 1fr; }
+    }
+
+    /* Projects — clean even grid, no orphaned cards */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    .projects-grid .span-2 { grid-column: span 2; }
+    @media (max-width: 768px) {
+      .projects-grid { grid-template-columns: 1fr; }
+      .projects-grid .span-2 { grid-column: span 1; }
+    }
+  </style>
 </head>
 
 <body>
@@ -30,9 +73,8 @@
             <h1 class="hero-title">
                 <span id="typewriter-text"></span><span class="cursor">.</span>
             </h1>
-            <p class="welcome-text">Service Desk Analyst · Level 1/2 IT Support</p>
+            <p class="welcome-text">IT Support Officer</p>
             <div class="badge">Liverpool, NSW &nbsp;·&nbsp; Full AU Working Rights</div>
-            <!-- PLACEHOLDER: Update headline below when you confirm PwC numbers -->
             <h2 class="headline">95% First-Contact Resolution Across 200+ Users</h2>
             <p class="sub-headline">
                 IT Support professional with <strong>2+ years</strong> of enterprise experience across PwC and multi-site environments. Proven across <strong>Microsoft 365, Entra ID, Intune, and Cisco Meraki</strong> — backed by hands-on home lab work in Zero Trust, VLAN design, and Azure infrastructure.
@@ -52,13 +94,11 @@
   <div class="container-wide">
     <h2 class="section-title">Professional Experience</h2>
 
-    <div class="bento-grid">
+    <div class="experience-grid">
 
-      <!-- PwC — span-2, most prominent -->
-      <div class="card span-2">
+      <div class="card">
         <div class="card-top">
             <h3>AV &amp; Technical Support Analyst</h3>
-            <!-- PLACEHOLDER: Add room count, event volume, user count once confirmed -->
             <p class="meta"><strong>PwC</strong> | Jun 2025 – Present</p>
         </div>
         <ul>
@@ -79,8 +119,7 @@
         </div>
       </div>
 
-      <!-- PHG IT Support -->
-      <div class="card span-2">
+      <div class="card">
         <div class="card-top">
             <h3>IT Support Officer</h3>
             <p class="meta"><strong>Platinum Hospitality Group</strong> | Feb 2024 – Jun 2025</p>
@@ -112,38 +151,49 @@
   <div class="container-wide">
     <h2 class="section-title">Technical Skills &amp; Certifications</h2>
 
-    <!-- Tech stack ticker — replaced placeholder text -->
     <div class="top-ticker">
         <div class="ticker-track">
-            <span>Active Directory &nbsp;·&nbsp; Entra ID &nbsp;·&nbsp; Microsoft Intune &nbsp;·&nbsp; Autopilot &nbsp;·&nbsp; Cisco Meraki &nbsp;·&nbsp; Microsoft 365 &nbsp;·&nbsp; Azure &nbsp;·&nbsp; Windows Server 2022 &nbsp;·&nbsp; Hyper-V &nbsp;·&nbsp; Zero Trust &nbsp;·&nbsp; VLANs &nbsp;·&nbsp; DNS &amp; DHCP &nbsp;·&nbsp; ServiceNow &nbsp;·&nbsp; Freshservice &nbsp;·&nbsp; Teams Rooms &nbsp;·&nbsp; JAMF &nbsp;·&nbsp;</span>
-            <span>Active Directory &nbsp;·&nbsp; Entra ID &nbsp;·&nbsp; Microsoft Intune &nbsp;·&nbsp; Autopilot &nbsp;·&nbsp; Cisco Meraki &nbsp;·&nbsp; Microsoft 365 &nbsp;·&nbsp; Azure &nbsp;·&nbsp; Windows Server 2022 &nbsp;·&nbsp; Hyper-V &nbsp;·&nbsp; Zero Trust &nbsp;·&nbsp; VLANs &nbsp;·&nbsp; DNS &amp; DHCP &nbsp;·&nbsp; ServiceNow &nbsp;·&nbsp; Freshservice &nbsp;·&nbsp; Teams Rooms &nbsp;·&nbsp; JAMF &nbsp;·&nbsp;</span>
-            <span>Active Directory &nbsp;·&nbsp; Entra ID &nbsp;·&nbsp; Microsoft Intune &nbsp;·&nbsp; Autopilot &nbsp;·&nbsp; Cisco Meraki &nbsp;·&nbsp; Microsoft 365 &nbsp;·&nbsp; Azure &nbsp;·&nbsp; Windows Server 2022 &nbsp;·&nbsp; Hyper-V &nbsp;·&nbsp; Zero Trust &nbsp;·&nbsp; VLANs &nbsp;·&nbsp; DNS &amp; DHCP &nbsp;·&nbsp; ServiceNow &nbsp;·&nbsp; Freshservice &nbsp;·&nbsp; Teams Rooms &nbsp;·&nbsp; JAMF &nbsp;·&nbsp;</span>
-            <span>Active Directory &nbsp;·&nbsp; Entra ID &nbsp;·&nbsp; Microsoft Intune &nbsp;·&nbsp; Autopilot &nbsp;·&nbsp; Cisco Meraki &nbsp;·&nbsp; Microsoft 365 &nbsp;·&nbsp; Azure &nbsp;·&nbsp; Windows Server 2022 &nbsp;·&nbsp; Hyper-V &nbsp;·&nbsp; Zero Trust &nbsp;·&nbsp; VLANs &nbsp;·&nbsp; DNS &amp; DHCP &nbsp;·&nbsp; ServiceNow &nbsp;·&nbsp; Freshservice &nbsp;·&nbsp; Teams Rooms &nbsp;·&nbsp; JAMF &nbsp;·&nbsp;</span>
+            <span>Active Directory &nbsp;·&nbsp; Entra ID &nbsp;·&nbsp; Microsoft Intune &nbsp;·&nbsp; Autopilot &nbsp;·&nbsp; Cisco Meraki &nbsp;·&nbsp; Microsoft 365 &nbsp;·&nbsp; Azure &nbsp;·&nbsp; Windows Server 2022 &nbsp;·&nbsp; Hyper-V &nbsp;·&nbsp; Zero Trust &nbsp;·&nbsp; VLANs &nbsp;·&nbsp; DNS &amp; DHCP &nbsp;·&nbsp; ServiceNow &nbsp;·&nbsp; Freshservice &nbsp;·&nbsp; Teams Rooms &nbsp;·&nbsp; JAMF &nbsp;·&nbsp; PowerShell &nbsp;·&nbsp; Remote Desktop &nbsp;·&nbsp;</span>
+            <span>Active Directory &nbsp;·&nbsp; Entra ID &nbsp;·&nbsp; Microsoft Intune &nbsp;·&nbsp; Autopilot &nbsp;·&nbsp; Cisco Meraki &nbsp;·&nbsp; Microsoft 365 &nbsp;·&nbsp; Azure &nbsp;·&nbsp; Windows Server 2022 &nbsp;·&nbsp; Hyper-V &nbsp;·&nbsp; Zero Trust &nbsp;·&nbsp; VLANs &nbsp;·&nbsp; DNS &amp; DHCP &nbsp;·&nbsp; ServiceNow &nbsp;·&nbsp; Freshservice &nbsp;·&nbsp; Teams Rooms &nbsp;·&nbsp; JAMF &nbsp;·&nbsp; PowerShell &nbsp;·&nbsp; Remote Desktop &nbsp;·&nbsp;</span>
+            <span>Active Directory &nbsp;·&nbsp; Entra ID &nbsp;·&nbsp; Microsoft Intune &nbsp;·&nbsp; Autopilot &nbsp;·&nbsp; Cisco Meraki &nbsp;·&nbsp; Microsoft 365 &nbsp;·&nbsp; Azure &nbsp;·&nbsp; Windows Server 2022 &nbsp;·&nbsp; Hyper-V &nbsp;·&nbsp; Zero Trust &nbsp;·&nbsp; VLANs &nbsp;·&nbsp; DNS &amp; DHCP &nbsp;·&nbsp; ServiceNow &nbsp;·&nbsp; Freshservice &nbsp;·&nbsp; Teams Rooms &nbsp;·&nbsp; JAMF &nbsp;·&nbsp; PowerShell &nbsp;·&nbsp; Remote Desktop &nbsp;·&nbsp;</span>
+            <span>Active Directory &nbsp;·&nbsp; Entra ID &nbsp;·&nbsp; Microsoft Intune &nbsp;·&nbsp; Autopilot &nbsp;·&nbsp; Cisco Meraki &nbsp;·&nbsp; Microsoft 365 &nbsp;·&nbsp; Azure &nbsp;·&nbsp; Windows Server 2022 &nbsp;·&nbsp; Hyper-V &nbsp;·&nbsp; Zero Trust &nbsp;·&nbsp; VLANs &nbsp;·&nbsp; DNS &amp; DHCP &nbsp;·&nbsp; ServiceNow &nbsp;·&nbsp; Freshservice &nbsp;·&nbsp; Teams Rooms &nbsp;·&nbsp; JAMF &nbsp;·&nbsp; PowerShell &nbsp;·&nbsp; Remote Desktop &nbsp;·&nbsp;</span>
         </div>
     </div>
 
-    <div class="bento-grid-2">
+    <div class="skills-grid">
 
       <div class="card">
         <h3>Technical Skills</h3>
         <ul class="clean-list">
             <li style="margin-bottom: 0.8rem;">
-                <strong>Identity &amp; Access:</strong><br>
-                <span style="color: var(--text-muted); font-size: 0.9rem;">Active Directory, Entra ID, RBAC, MFA, Conditional Access, user provisioning &amp; offboarding.</span>
+                <strong>Identity &amp; Access Management:</strong><br>
+                <span style="color: var(--text-muted); font-size: 0.9rem;">Active Directory, Entra ID, RBAC, MFA, Conditional Access, user provisioning &amp; offboarding, SSO.</span>
             </li>
             <li style="margin-bottom: 0.8rem;">
                 <strong>Microsoft 365 &amp; Endpoint Management:</strong><br>
-                <span style="color: var(--text-muted); font-size: 0.9rem;">Exchange Online, Teams, OneDrive, SharePoint, Microsoft Intune, Windows Autopilot, JAMF.</span>
+                <span style="color: var(--text-muted); font-size: 0.9rem;">Exchange Online, Teams, OneDrive, SharePoint, Microsoft Intune, Windows Autopilot, JAMF, MDM policy management.</span>
             </li>
             <li style="margin-bottom: 0.8rem;">
                 <strong>Networking &amp; Infrastructure:</strong><br>
                 <span style="color: var(--text-muted); font-size: 0.9rem;">DNS, DHCP, TCP/IP, VLANs, site-to-site VPN, Cisco Meraki, Windows Server 2022, Hyper-V, Microsoft Azure.</span>
             </li>
             <li style="margin-bottom: 0.8rem;">
-                <strong>Security &amp; ITSM Tools:</strong><br>
-                <span style="color: var(--text-muted); font-size: 0.9rem;">Zero Trust, phishing-resistant MFA, endpoint protection, ServiceNow, Freshservice, Jira.</span>
+                <strong>Security &amp; ITSM:</strong><br>
+                <span style="color: var(--text-muted); font-size: 0.9rem;">Zero Trust architecture, phishing-resistant MFA, endpoint protection, Conditional Access, ServiceNow, Freshservice, Jira.</span>
             </li>
             <li style="margin-bottom: 0.8rem;">
+                <strong>Scripting &amp; Automation:</strong><br>
+                <span style="color: var(--text-muted); font-size: 0.9rem;">PowerShell, Bash scripting, task automation, bulk user management via CLI, scheduled tasks.</span>
+            </li>
+            <li style="margin-bottom: 0.8rem;">
+                <strong>Remote Support &amp; Tooling:</strong><br>
+                <span style="color: var(--text-muted); font-size: 0.9rem;">RDP, TeamViewer, AnyDesk, Quick Assist, remote endpoint troubleshooting, screen-sharing diagnostics.</span>
+            </li>
+            <li style="margin-bottom: 0.8rem;">
+                <strong>Operating Systems:</strong><br>
+                <span style="color: var(--text-muted); font-size: 0.9rem;">Windows 10/11 (advanced), macOS, Ubuntu/Linux (basic admin), Windows Server 2022.</span>
+            </li>
+            <li style="margin-bottom: 0;">
                 <strong>AV &amp; Hardware:</strong><br>
                 <span style="color: var(--text-muted); font-size: 0.9rem;">Projectors, LED displays, conferencing systems (Teams Rooms / Webex / Zoom), VoIP (3CX), POS (Lightspeed).</span>
             </li>
@@ -152,9 +202,9 @@
 
       <div class="card">
         <h3>Certifications</h3>
-        <ul class="clean-list">
+        <ul class="clean-list" style="flex: 1;">
 
-          <li style="margin-bottom: 1.5rem;">
+          <li style="margin-bottom: 1.4rem;">
               <div style="margin-bottom: 0.2rem;"><strong>Microsoft:</strong> Cloud Support Associate</div>
               <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.3rem;">Coursera</div>
               <a href="assets/pdfs/Microsoft Cloud Support Associate.pdf" target="_blank" class="cert-link">
@@ -162,7 +212,7 @@
               </a>
           </li>
 
-          <li style="margin-bottom: 1.5rem;">
+          <li style="margin-bottom: 1.4rem;">
               <div style="margin-bottom: 0.2rem;"><strong>Microsoft:</strong> Endpoint Administrator (MD-102)</div>
               <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.3rem;">Coursera</div>
               <a href="assets/pdfs/MD-102.pdf" target="_blank" class="cert-link">
@@ -170,7 +220,7 @@
               </a>
           </li>
 
-          <li style="margin-bottom: 1.5rem;">
+          <li style="margin-bottom: 1.4rem;">
               <div style="margin-bottom: 0.2rem;"><strong>Cisco:</strong> CCST IT Support (100-140)</div>
               <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.3rem;">Coursera</div>
               <a href="assets/pdfs/CCIT.pdf" target="_blank" class="cert-link">
@@ -178,7 +228,7 @@
               </a>
           </li>
 
-          <li style="margin-bottom: 1.5rem;">
+          <li style="margin-bottom: 1.4rem;">
               <div style="margin-bottom: 0.2rem;"><strong>CompTIA:</strong> A+ Core 1</div>
               <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.3rem;">Coursera</div>
               <a href="assets/pdfs/A+.pdf" target="_blank" class="cert-link">
@@ -186,12 +236,17 @@
               </a>
           </li>
 
-          <li style="margin-bottom: 1.5rem;">
+          <li style="margin-bottom: 1.4rem;">
               <div style="margin-bottom: 0.2rem;"><strong>Google:</strong> IT Support Professional Certificate</div>
               <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.3rem;">Coursera</div>
               <a href="assets/pdfs/Google IT.pdf" target="_blank" class="cert-link">
                   <i class="fas fa-external-link-alt"></i> View Certificate
               </a>
+          </li>
+
+          <li style="margin-bottom: 0;">
+              <div style="margin-bottom: 0.2rem;"><strong>In Progress:</strong> AZ-900 Microsoft Azure Fundamentals</div>
+              <div style="font-size: 0.85rem; color: var(--text-muted);">Microsoft Learn &nbsp;·&nbsp; Expected 2026</div>
           </li>
 
         </ul>
@@ -212,8 +267,9 @@
   <div class="container-wide">
     <h2 class="section-title">Hands-On Technical Projects</h2>
 
-    <div class="bento-grid-2">
+    <div class="projects-grid">
 
+        <!-- Featured — full width -->
         <div class="card span-2" style="border-left: 4px solid var(--accent);">
             <h3>Basic IT Troubleshooting Knowledge Base</h3>
             <p style="margin-bottom: 1rem;">
@@ -224,6 +280,7 @@
             </a>
         </div>
 
+        <!-- Row 1 -->
         <div class="card">
             <h3>Enterprise Infrastructure &amp; Security</h3>
             <p style="margin-bottom: 1rem;">
@@ -244,6 +301,7 @@
             </a>
         </div>
 
+        <!-- Row 2 -->
         <div class="card">
             <h3>Virtual Active Directory &amp; Site-to-Site VPN</h3>
             <p style="margin-bottom: 1rem;">
@@ -264,7 +322,8 @@
             </a>
         </div>
 
-        <div class="card">
+        <!-- Row 3 — full width to avoid orphan -->
+        <div class="card span-2">
             <h3>IT Support Interview Prep Guide</h3>
             <p style="margin-bottom: 1rem;">
                 Developed a fully interactive, browser-based revision guide for L1/L2 IT Support interviews. Features rapid-fire quizzes for ports/IPs, progress tracking for technical Q&amp;As, and comprehensive troubleshooting playbooks covering AD, Intune, JAMF, and VPNs.
@@ -298,7 +357,6 @@
   <div class="container-wide">
     <div class="card" style="text-align: center;">
         <h2 class="section-title" style="border: none; margin-bottom: 1rem;">Let's Connect</h2>
-        <!-- PLACEHOLDER: Replace the div below with hard-coded links once you share LinkedIn/email -->
         <div id="contact-container" class="contact-links">
             <p style="color: var(--text-muted);">Loading contact info...</p>
         </div>
@@ -306,7 +364,7 @@
   </div>
 </section>
 
-<!-- GAME ROOM — moved after Contact -->
+<!-- GAME ROOM -->
 <section id="arcade" class="fade-in">
   <div class="container-wide">
     <h2 class="section-title" style="text-align:center; margin-bottom: 0.5rem;">Game Room</h2>
