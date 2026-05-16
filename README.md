@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/images/banner.svg" alt="Aayush Acharya" width="900"/>
+  <img src="assets/images/aayush.png" alt="Aayush Acharya" width="900"/>
 </p>
 
 ---
@@ -10,6 +10,7 @@
 ![Lighthouse](https://img.shields.io/badge/Lighthouse-100%2F100-orange?style=flat-square)
 
 ---
+Now retired and merged with my main site aayush.com.au 
 
 ## 🔗 Live Site
 
